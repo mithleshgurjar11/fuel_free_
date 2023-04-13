@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fuel_free/Helper/color.dart';
 
 
 class ChangePassword extends StatefulWidget {
@@ -17,31 +18,18 @@ class _ChangePasswordState extends State<ChangePassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE9F0FF),
-      appBar: AppBar(
-          title: Text(
-            'Change Password',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          centerTitle: true,
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/appbar.png'), fit: BoxFit.fill)),
-          ),
-          leading: InkWell(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              height: 20,
-              width: 30,
-              decoration: BoxDecoration(
-                  color: Color(0xff8D5321),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Icon(Icons.keyboard_arrow_left_outlined),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          )),
+        appBar: AppBar(
+          backgroundColor: colors.Appbar,
+          iconTheme: IconThemeData(color: colors.secondary),
+          elevation: 1,
+          title: Center(
+              child: Text("Change Password",
+                style: TextStyle(
+                    color: colors.secondary,
+                    fontSize: 16
+                ),
+              )),
+        ),
       body:SingleChildScrollView(
         child:  Column(
           children: [
@@ -61,28 +49,6 @@ class _ChangePasswordState extends State<ChangePassword> {
                   children: [
                     SizedBox(
                       height: 20,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 15,right: 15,),
-                      height: 50,
-                      child: TextField(
-                        controller: OldPasswordCtr,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            hintText: 'Enter Your Old Password',
-                            hintStyle: TextStyle(fontSize: 13),
-                            contentPadding: EdgeInsets.only(top: 5,right: 16),
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: Color(0xffF79F10),
-                            ),
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.circular(50))),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 25,
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 15,right: 15,),
@@ -158,14 +124,11 @@ class _ChangePasswordState extends State<ChangePassword> {
             ),
            InkWell(
              child:  Container(
-               height: 60,
-               width: MediaQuery.of(context).size.width/1.1,
+               height: MediaQuery.of(context).size.height * 0.07,
+               width: MediaQuery.of(context).size.width / 1.1,
                decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(40),
-                   image: DecorationImage(
-                       image: AssetImage('assets/button_image.png'),
-                       fit: BoxFit.fill
-                   )
+                   color: colors.secondary
                ),
                child: Center(
                  child: Text('Save',style: TextStyle(color: Colors.white),),

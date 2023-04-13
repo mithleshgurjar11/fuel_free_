@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
+import 'package:fuel_free/Screen/Utilities/chargingpoint_details_page.dart';
 import 'package:fuel_free/Screen/Utilities/service_details_page.dart';
 import 'package:readmore/readmore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class ServiceProductDetails extends StatefulWidget {
-  const ServiceProductDetails({Key? key}) : super(key: key);
+class ChargingProductDetails extends StatefulWidget {
+  const ChargingProductDetails({Key? key}) : super(key: key);
 
   @override
-  State<ServiceProductDetails> createState() => _ServiceProductDetailsState();
+  State<ChargingProductDetails> createState() => _ChargingProductDetailsState();
 }
 
-class _ServiceProductDetailsState extends State<ServiceProductDetails> {
+class _ChargingProductDetailsState extends State<ChargingProductDetails> {
+
+  void openWhatsApp() async {
+    final url = "whatsapp://send?phone=7610480098";
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -19,7 +31,7 @@ class _ServiceProductDetailsState extends State<ServiceProductDetails> {
         iconTheme: IconThemeData(color: colors.secondary),
         elevation: 1,
         title: Center(
-            child: Text("Service Product Details",
+            child: Text("Charging Product Details",
               style: TextStyle(
                   color: colors.secondary,
                   fontSize: 16
@@ -63,188 +75,188 @@ class _ServiceProductDetailsState extends State<ServiceProductDetails> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Row(
-                children: [
-                  Text("₹ 157650 ",
-                    style: TextStyle(
-                      //fontWeight: FontWeight.w600,
-                        fontSize: 12
-                    ),
-                  ),
-                  VerticalDivider(),
-                  Text("20% off",
-                    style: TextStyle(
-                      //fontWeight: FontWeight.w600,
-                        fontSize: 12,
-                        color: Colors.green
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Divider(),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text("Product Details:",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Ex showroom price",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-                      Text("₹ 3,54,052",
-                        // style: TextStyle(
-                        //     color: Colors.grey
-                        // ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("RTO",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-                      Text("₹ 33,425",
-                        // style: TextStyle(
-                        //     color: Colors.grey
-                        // ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Insurance",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-                      Text("₹ 19,500",
-                        // style: TextStyle(
-                        //     color: Colors.grey
-                        // ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Others",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-                      Text("₹ 1,800",
-                        // style: TextStyle(
-                        //     color: Colors.grey
-                        // ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Text("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("On road price ",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-                      Text("₹ 11,47,390",
-                        // style: TextStyle(
-                        //     color: Colors.grey
-                        // ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("EMI: ₹ 21,833/month",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-                      Text("Apply Now",
-                        style: TextStyle(
-                            color: colors.primary
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Text("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
-                        style: TextStyle(
-                            color: Colors.grey
-                        ),
-                      ),
-
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 10),
+            //   child: Row(
+            //     children: [
+            //       Text("₹ 157650 ",
+            //         style: TextStyle(
+            //           //fontWeight: FontWeight.w600,
+            //             fontSize: 12
+            //         ),
+            //       ),
+            //       VerticalDivider(),
+            //       Text("20% off",
+            //         style: TextStyle(
+            //           //fontWeight: FontWeight.w600,
+            //             fontSize: 12,
+            //             color: Colors.green
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Divider(),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 10, right: 10),
+            //   child: Column(
+            //     children: [
+            //       Row(
+            //         children: [
+            //           Text("Product Details:",
+            //             style: TextStyle(
+            //                 fontSize: 16,
+            //                 fontWeight: FontWeight.w600
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text("Ex showroom price",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //           Text("₹ 3,54,052",
+            //             // style: TextStyle(
+            //             //     color: Colors.grey
+            //             // ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text("RTO",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //           Text("₹ 33,425",
+            //             // style: TextStyle(
+            //             //     color: Colors.grey
+            //             // ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text("Insurance",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //           Text("₹ 19,500",
+            //             // style: TextStyle(
+            //             //     color: Colors.grey
+            //             // ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text("Others",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //           Text("₹ 1,800",
+            //             // style: TextStyle(
+            //             //     color: Colors.grey
+            //             // ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         children: [
+            //           Text("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text("On road price ",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //           Text("₹ 11,47,390",
+            //             // style: TextStyle(
+            //             //     color: Colors.grey
+            //             // ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Text("EMI: ₹ 21,833/month",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //           Text("Apply Now",
+            //             style: TextStyle(
+            //                 color: colors.primary
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //       SizedBox(
+            //         height: 20,
+            //       ),
+            //       Row(
+            //         children: [
+            //           Text("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
+            //             style: TextStyle(
+            //                 color: Colors.grey
+            //             ),
+            //           ),
+            //
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // ),
             SizedBox(
               height: 10,
             ),
@@ -255,7 +267,7 @@ class _ServiceProductDetailsState extends State<ServiceProductDetails> {
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   ReadMoreText(
-                    '\nThis Course serves as an introduction to the physics of force and motion.........................................',
+                    '\nThis Course serves as an introduction to the physics of force and motion This Course serves as an introduction to the physics of force and motion This Course serves as an introduction to the physics of force and motion This Course serves as an introduction to the physics of force and motion This Course serves as an introduction to the physics of force and motion This Course serves as an introduction to the physics of force and motion This Course serves as an introduction to the physics of force and motion...................................................................................................................',
                     trimLines: 2,
                     preDataText: "Description:",
                     preDataTextStyle: TextStyle(
@@ -276,6 +288,34 @@ class _ServiceProductDetailsState extends State<ServiceProductDetails> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,right: 10),
+              child: InkWell(
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey.shade200
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("For Enquiry to Send Vendore",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                onTap: (){
+                  openWhatsApp;
+                },
+              ),
+            )
           ],
         ),
       ),
@@ -447,7 +487,7 @@ class _ServiceProductDetailsState extends State<ServiceProductDetails> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const ServiceDetails(),
+                    builder: (context) => const ChargingpointDetails(),
                   ),
                 );
               },

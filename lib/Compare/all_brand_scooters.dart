@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
+import 'package:fuel_free/HomePage/scooter_details_page.dart';
 
-class AllBrandsScooters extends StatefulWidget {
-  const AllBrandsScooters({Key? key}) : super(key: key);
+class BrandsScooters extends StatefulWidget {
+  const BrandsScooters({Key? key}) : super(key: key);
 
   @override
-  State<AllBrandsScooters> createState() => _AllBrandsScootersState();
+  State<BrandsScooters> createState() => _BrandsScootersState();
 }
 
-class _AllBrandsScootersState extends State<AllBrandsScooters> {
+class _BrandsScootersState extends State<BrandsScooters> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,7 +68,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -149,7 +150,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -190,7 +191,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -239,7 +240,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -280,7 +281,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -321,7 +322,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -362,7 +363,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -411,7 +412,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -452,7 +453,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -493,7 +494,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -534,7 +535,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -583,7 +584,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -624,7 +625,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -665,7 +666,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -706,7 +707,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -755,7 +756,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -796,7 +797,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -837,7 +838,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -878,7 +879,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -927,7 +928,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -968,7 +969,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1009,7 +1010,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1050,7 +1051,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1099,7 +1100,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1140,7 +1141,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1181,7 +1182,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1222,7 +1223,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1271,7 +1272,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1312,7 +1313,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1353,7 +1354,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1394,7 +1395,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1443,7 +1444,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1484,7 +1485,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1525,7 +1526,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1567,7 +1568,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1617,7 +1618,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1658,7 +1659,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1699,7 +1700,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1740,7 +1741,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1790,7 +1791,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1831,7 +1832,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1873,7 +1874,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1915,7 +1916,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -1967,7 +1968,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2008,7 +2009,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2049,7 +2050,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2090,7 +2091,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2140,7 +2141,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2181,7 +2182,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2222,7 +2223,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2263,7 +2264,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2313,7 +2314,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2355,7 +2356,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2396,7 +2397,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2437,7 +2438,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2487,7 +2488,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2528,7 +2529,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2569,7 +2570,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2610,7 +2611,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2661,7 +2662,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2703,7 +2704,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2744,7 +2745,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2785,7 +2786,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },
@@ -2834,7 +2835,7 @@ class _AllBrandsScootersState extends State<AllBrandsScooters> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const ScooterDetailsPage(),
                         ),
                       );
                     },

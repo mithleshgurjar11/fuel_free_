@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/auto_details.page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
 
-class AllBrandsAuto extends StatefulWidget {
-  const AllBrandsAuto({Key? key}) : super(key: key);
+class BrandsAuto extends StatefulWidget {
+  const BrandsAuto({Key? key}) : super(key: key);
 
   @override
-  State<AllBrandsAuto> createState() => _AllBrandsAutoState();
+  State<BrandsAuto> createState() => _BrandsAutoState();
 }
 
-class _AllBrandsAutoState extends State<AllBrandsAuto> {
+class _BrandsAutoState extends State<BrandsAuto> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,7 +68,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -149,7 +150,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -190,7 +191,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -239,7 +240,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -280,7 +281,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -321,7 +322,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -362,7 +363,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -411,7 +412,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -452,7 +453,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -493,7 +494,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -535,7 +536,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -585,7 +586,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -626,7 +627,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -667,7 +668,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -708,7 +709,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -757,7 +758,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -798,7 +799,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -839,7 +840,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -881,7 +882,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -930,7 +931,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -971,7 +972,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1012,7 +1013,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1053,7 +1054,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1102,7 +1103,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1143,7 +1144,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1184,7 +1185,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1226,7 +1227,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1276,7 +1277,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1317,7 +1318,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1358,7 +1359,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1399,7 +1400,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1448,7 +1449,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1490,7 +1491,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1531,7 +1532,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1572,7 +1573,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1622,7 +1623,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1663,7 +1664,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1704,7 +1705,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1745,7 +1746,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1794,7 +1795,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1835,7 +1836,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1876,7 +1877,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1917,7 +1918,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -1968,7 +1969,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -2010,7 +2011,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -2051,7 +2052,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },
@@ -2093,7 +2094,7 @@ class _AllBrandsAutoState extends State<AllBrandsAuto> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const AutoDetailsPage(),
                         ),
                       );
                     },

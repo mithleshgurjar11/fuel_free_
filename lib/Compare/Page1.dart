@@ -1,1185 +1,917 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:property_buy_seller/screen/propertyPages/data.dart';
+import 'package:fuel_free/Helper/color.dart';
 
-import '../../utilities/dialogs/show_toast.dart';
-import 'rows/otherdetails.dart';
+
+bool isClickCars = true;
+bool isClickScooters = false;
+bool isClickBikes = false;
+bool isClickCycles = false;
+bool isClickBuses = false;
+bool isClickLogistics = false;
+bool isClickAuto = false;
+bool isClickLoadings = false;
+
+Color CarsColor = colors.secondary;
+Color ScootersColor = colors.secondary;
+Color BikesColor = colors.secondary;
+Color CyclesColor = colors.secondary;
+Color BusesColor = colors.secondary;
+Color LogisticsColor = colors.secondary;
+Color AutoColor = colors.secondary;
+Color LoadingsColor = colors.secondary;
+
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
-
-  static bool isClickOwner = false;
-  static bool isClickBroker = false;
-  static bool isClickColoniser = false;
 
   @override
   State<Page1> createState() => _Page1State();
 }
 
-// bool isClickRent = true;
-// bool isClickSell = false;
-// bool isClickResidential = false;
-// bool isClickCommercial = false;
-// bool isClickIndustrial = false;
-// bool isClickLand = false;
-// bool isClickShopOffice = true;
-// bool isClickRoom = false;
-// bool isClickHouse = false;
-// bool isClickHotel = false;
-// bool isClickGuestHous = false;
-// bool isClickOwner = false;
-// bool isClickBroker = false;
-// bool isClickColonisers = false;
-
-// Color Data.landColor = Colors.transparent;
-// Color shopColor = Colors.transparent;
-// Color roomColor = Colors.transparent;
-// Color houseColor = Colors.transparent;
-// Color hotelColor = Colors.transparent;
-// Color guestColor = Colors.transparent;
-// Color Data.sellColor = Colors.transparent;
-// Color Data.rentColor = Colors.transparent;
-// Color Data.ownerColor = Colors.transparent;
-// Color Data.brokerColor = Colors.transparent;
-// Color Data.coloniserColor = Colors.transparent;
-// Color Data.residentialColor = Colors.transparent;
-// Color Data.CommercialColor = Colors.transparent;
-// Color Data.IndustrialColor = Colors.transparent;
-
 class _Page1State extends State<Page1> {
+
+
+  // void showToastCars() {
+  //   setState(() {
+  //     isClickCars = !isClickCars;
+  //   });
+  // }
+  // void showToastScooters() {
+  //   setState(() {
+  //     isClickScooters = !isClickScooters;
+  //   });
+  // }
+  // void showToastBikes() {
+  //   setState(() {
+  //     isClickBikes = !isClickBikes;
+  //   });
+  // }
+  // void showToastCycles() {
+  //   setState(() {
+  //     isClickCycles = !isClickCycles;
+  //   });
+  // }
+  // void showToastBuses() {
+  //   setState(() {
+  //     isClickBuses = !isClickBuses;
+  //   });
+  // }
+  // void showToastLogistics() {
+  //   setState(() {
+  //     isClickLogistics = !isClickLogistics;
+  //   });
+  // }
+  // void showToastAuto() {
+  //   setState(() {
+  //     isClickAuto = !isClickAuto;
+  //   });
+  // }
+  // void showToastLoadings() {
+  //   setState(() {
+  //     isClickLoadings = !isClickLoadings;
+  //   });
+  // }
+
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Row(
-                children: [
-                  Text("I Want To",
-                      style: TextStyle(fontSize: 15, color: Colors.black,fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Text(
-                    "*",
-                    style: TextStyle(color: Colors.red, fontSize: 19),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-
-            Container(
-              height: 28,
-              width: double.infinity,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  InkWell(
-                    child: Container(
-                      height: 40,
-                      width: 65,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.grey),
-                        color: Data.rentColor,
-                      ),
-                      child: Center(
-                          child: Text(
-                        "Rent",
-                        style: TextStyle(
-
-                            fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold,
-
-                        ),
-                      ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 30,right: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: CarsColor,
                       ),
                     ),
-                    onTap: () {
-                      setState(() {
-                        Data.rentColor = Colors.blue;
-                        Data.sellColor = Colors.transparent;
-                        showToast("Rent", 1);
-                        Data.isClickRent = true;
-                        Data.isClickSell = false;
-                      });
-                    },
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  InkWell(
-                    child: Container(
-                      height: 40,
-                      width: 65,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.grey),
-                        color: Data.sellColor,
-                      ),
-                      child: Center(
-                          child: Text(
-                        "Sell",
-                        style: TextStyle(
-                            fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                      )),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        Data.sellColor = Colors.blue;
-                        Data.rentColor = Colors.transparent;
-                        showToast("Sell", 1);
-                        Data.isClickRent = false;
-                        print("private");
-                        Data.isClickSell = true;
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ),
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Row(
-                children: [
-                  Text("Owner Type",
+                    child: Center(
+                      child: Text("Car",
                       style: TextStyle(
-                        fontSize: 15,fontWeight: FontWeight.bold
-                      )),
-                  SizedBox(
-                    width: 3,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600
+                      ),),
+                    ),
                   ),
-                  Text(
-                    "*",
-                    style: TextStyle(color: Colors.red, fontSize: 19),
+                  onTap: () {
+                    isClickCars = true;
+                    isClickScooters = false;
+                    isClickBikes = false;
+                    isClickCycles = false;
+                    isClickBuses = false;
+                    isClickLogistics = false;
+                    isClickAuto = false;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.primary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrands(),
+                    //   ),
+                    // );
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: ScootersColor,
+                        )
+                    ),
+                    child: Center(
+                      child: Text("Scooters",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
                   ),
-                ],
-              ),
+                  onTap: () {
+
+                    isClickCars = false;
+                    isClickScooters = true;
+                    isClickBikes = false;
+                    isClickCycles = false;
+                    isClickBuses = false;
+                    isClickLogistics = false;
+                    isClickAuto = false;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.primary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsScooters(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ],
             ),
-            SizedBox(
-              height: 15,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30,right: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: BikesColor,
+                      ),
+                    ),
+                    child: Center(
+                      child: Text("Bikes",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
+                  ),
+                  onTap: () {
+
+                    isClickCars = false;
+                    isClickScooters = false;
+                    isClickBikes = true;
+                    isClickCycles = false;
+                    isClickBuses = false;
+                    isClickLogistics = false;
+                    isClickAuto = false;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.primary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsBikes(),
+                    //   ),
+                    // );
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: CyclesColor,
+                        )
+                    ),
+                    child: Center(
+                      child: Text("Cycles",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
+                  ),
+                  onTap: () {
+
+                    isClickCars = false;
+                    isClickScooters = false;
+                    isClickBikes = false;
+                    isClickCycles = true;
+                    isClickBuses = false;
+                    isClickLogistics = false;
+                    isClickAuto = false;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.primary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsCycles(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ],
             ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30,right: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: BusesColor,
+                      ),
+                    ),
+                    child: Center(
+                      child: Text("Buses",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
+                  ),
+                  onTap: () {
 
-            Container(
-              // change your height based on preference
-              height: 28,
-              width: double.infinity,
-              child: ListView(
-                // set the scroll direction to horizontal
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.ownerColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Owner",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.ownerColor = Colors.blue;
-                          Data.brokerColor = Colors.transparent;
-                          Data.coloniserColor = Colors.transparent;
-                          showToast("Owner", 1);
-                          Data.isClickBroker = false;
-                          Data.isClickOwner = true;
-                          Data.isClickColoniser = false;
-                          // isClickResidential = true;
-                        });
-                      },
+                    isClickCars = false;
+                    isClickScooters = false;
+                    isClickBikes = false;
+                    isClickCycles = false;
+                    isClickBuses = true;
+                    isClickLogistics = false;
+                    isClickAuto = false;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.primary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsBuses(),
+                    //   ),
+                    // );
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: LogisticsColor,
+                        )
                     ),
-                  SizedBox(
-                    width: 5,
+                    child: Center(
+                      child: Text("Logistics",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
                   ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.brokerColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Broker",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.ownerColor = Colors.transparent;
-                          Data.brokerColor = Colors.blue;
-                          Data.coloniserColor = Colors.transparent;
-                          showToast("Broker", 1);
-                          Data.isClickBroker = true;
-                          Data.isClickOwner = false;
-                          Data.isClickColoniser = false;
-                          // isClickResidential = true;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.coloniserColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Coloniser",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.ownerColor = Colors.transparent;
-                          Data.brokerColor = Colors.transparent;
-                          Data.coloniserColor =
-                              Colors.blue;
-                          showToast("Coloniser", 1);
-                          Data.isClickBroker = false;
-                          Data.isClickOwner = false;
-                          Data.isClickColoniser = true;
-                          // isClickResidential = true;
-                        });
-                      },
-                    ),
-                ],
-              ),
+                  onTap: () {
+
+                    isClickCars = false;
+                    isClickScooters = false;
+                    isClickBikes = false;
+                    isClickCycles = false;
+                    isClickBuses = false;
+                    isClickLogistics = true;
+                    isClickAuto = false;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.primary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsLogistics(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ],
             ),
-            Divider(),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30,right: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: AutoColor,
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(" Auto",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
+                  ),
+                  onTap: () {
 
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Row(
-                children: [
-                  Text("Property Type",
-                      style: TextStyle(
-                        fontSize: 15,fontWeight: FontWeight.bold
-                      )),
-                  SizedBox(
-                    width: 3,
+                    isClickCars = false;
+                    isClickScooters = false;
+                    isClickBikes = false;
+                    isClickCycles = false;
+                    isClickBuses = false;
+                    isClickLogistics = false;
+                    isClickAuto = true;
+                    isClickLoadings = false;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.primary;
+                    LoadingsColor = colors.secondary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsAuto(),
+                    //   ),
+                    // );
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: LoadingsColor,
+                        )
+                    ),
+                    child: Center(
+                      child: Text("Loadings",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600
+                        ),),
+                    ),
                   ),
-                  Text(
-                    "*",
-                    style: TextStyle(color: Colors.red, fontSize: 19),
-                  ),
-                ],
-              ),
+                  onTap: () {
+
+                    isClickCars = false;
+                    isClickScooters = false;
+                    isClickBikes = false;
+                    isClickCycles = false;
+                    isClickBuses = false;
+                    isClickLogistics = false;
+                    isClickAuto = false;
+                    isClickLoadings = true;
+
+                    CarsColor = colors.secondary;
+                    ScootersColor = colors.secondary;
+                    BikesColor = colors.secondary;
+                    CyclesColor = colors.secondary;
+                    BusesColor = colors.secondary;
+                    LogisticsColor = colors.secondary;
+                    AutoColor = colors.secondary;
+                    LoadingsColor = colors.primary;
+
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AllBrandsLoadings(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ],
             ),
-            SizedBox(
-              height: 15,
-            ),
+          ),
 
-            Container(
-              // change your height based on preference
-              height: 28,
-              width: double.infinity,
-              child: ListView(
-                // set the scroll direction to horizontal
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.residentialColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Residential",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.residentialColor =
-                              Colors.blue;
-                          Data.CommercialColor = Colors.transparent;
-                          Data.IndustrialColor = Colors.transparent;
-                          showToast("Residential", 1);
-                          // isClickResidential = true;
-                          Data.isClickResidential = true;
-                          Data.isClickCommercial = false;
-                          Data.isClickIndustrial = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.CommercialColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Commercial",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.residentialColor = Colors.transparent;
-                          Data.CommercialColor =
-                              Colors.blue;
-                          Data.IndustrialColor = Colors.transparent;
-                          showToast("Commercial", 1);
-                          // isClickResidential = true;
-                          Data.isClickResidential = false;
-                          Data.isClickCommercial = true;
-                          Data.isClickIndustrial = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 120,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.IndustrialColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Industrial",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.residentialColor = Colors.transparent;
-                          Data.CommercialColor = Colors.transparent;
-                          Data.IndustrialColor =
-                              Colors.blue;
-                          showToast("Industrial", 1);
-                          // isClickResidential = true;
-                          Data.isClickResidential = false;
-                          Data.isClickCommercial = false;
-                          Data.isClickIndustrial = true;
-                        });
-                      },
-                    ),
-                ],
-              ),
-            ),
-            Divider(),
-
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Row(
-                children: [
-                  Text("Accommodation types",
-                      style: TextStyle(fontSize: 15, color: Colors.black,fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Text(
-                    "*",
-                    style: TextStyle(color: Colors.red, fontSize: 19),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-
-            Container(
-              // change your height based on preference
-              height: 28,
-              width: double.infinity,
-              child: ListView(
-                // set the scroll direction to horizontal
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.landColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Land",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.landColor = Colors.blue;
-                          Data.shopColor = Colors.transparent;
-                          Data.roomColor = Colors.transparent;
-                          Data.houseColor = Colors.transparent;
-                          Data.hotelColor = Colors.transparent;
-                          Data.guestColor = Colors.transparent;
-                          showToast("Land", 1);
-                          Data.isClickLand = true;
-                          Data.isClickShopOffice = false;
-                          Data.isClickRoom = false;
-                          Data.isClickHouse = false;
-                          Data.isClickHotel = false;
-                          Data.isClickGuestHous = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.shopColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Shop/Office",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.shopColor = Colors.blue;
-                          Data.landColor = Colors.transparent;
-                          Data.roomColor = Colors.transparent;
-                          Data.houseColor = Colors.transparent;
-                          Data.hotelColor = Colors.transparent;
-                          Data.guestColor = Colors.transparent;
-                          showToast("Shop/Office", 1);
-                          Data.isClickLand = false;
-                          Data.isClickShopOffice = true;
-                          Data.isClickRoom = false;
-                          Data.isClickHouse = false;
-                          Data.isClickHotel = false;
-                          Data.isClickGuestHous = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.roomColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Room",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.roomColor = Colors.blue;
-                          Data.landColor = Colors.transparent;
-                          Data.shopColor = Colors.transparent;
-                          Data.houseColor = Colors.transparent;
-                          Data.hotelColor = Colors.transparent;
-                          Data.guestColor = Colors.transparent;
-                          showToast("Room", 1);
-                          Data.isClickLand = false;
-                          Data.isClickShopOffice = false;
-                          Data.isClickRoom = true;
-                          Data.isClickHouse = false;
-                          Data.isClickHotel = false;
-                          Data.isClickGuestHous = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.houseColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "House",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.houseColor = Colors.blue;
-                          Data.landColor = Colors.transparent;
-                          Data.roomColor = Colors.transparent;
-                          Data.shopColor = Colors.transparent;
-                          Data.hotelColor = Colors.transparent;
-                          Data.guestColor = Colors.transparent;
-                          showToast("House", 1);
-                          Data.isClickLand = false;
-                          Data.isClickShopOffice = false;
-                          Data.isClickRoom = false;
-                          Data.isClickHouse = true;
-                          Data.isClickHotel = false;
-                          Data.isClickGuestHous = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.hotelColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Hotel",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.hotelColor = Colors.blue;
-                          Data.landColor = Colors.transparent;
-                          Data.roomColor = Colors.transparent;
-                          Data.houseColor = Colors.transparent;
-                          Data.shopColor = Colors.transparent;
-                          Data.guestColor = Colors.transparent;
-                          showToast("Hotel", 1);
-                          Data.isClickLand = false;
-                          Data.isClickShopOffice = false;
-                          Data.isClickRoom = false;
-                          Data.isClickHouse = false;
-                          Data.isClickHotel = true;
-                          Data.isClickGuestHous = false;
-                        });
-                      },
-                    ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  if (Data.isClickRent || Data.isClickSell)
-                    InkWell(
-                      child: Container(
-                        height: 40,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.grey),
-                          color: Data.guestColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                          "Guest House",
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold),
-                        )),
-                      ),
-                      onTap: () {
-                        setState(() {
-                          Data.guestColor = Colors.blue;
-                          Data.landColor = Colors.transparent;
-                          Data.roomColor = Colors.transparent;
-                          Data.houseColor = Colors.transparent;
-                          Data.hotelColor = Colors.transparent;
-                          Data.shopColor = Colors.transparent;
-                          showToast("Guest House", 1);
-                          Data.isClickLand = false;
-                          Data.isClickShopOffice = false;
-                          Data.isClickRoom = false;
-                          Data.isClickHouse = false;
-                          Data.isClickHotel = false;
-                          Data.isClickGuestHous = true;
-                        });
-                      },
-                    ),
-                ],
-              ),
-            ),
-            Divider(),
-            // PlotDetails(),
-            // if (!isClickPlot) OtherDetails() else PlotDetails(),
-            OtherDetails(),
-
-            // SizedBox(
-            //   height: 20,
-            // ),
-
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Divider(),
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10.0),
-            //   child: Row(
-            //     children: [
-            //       Text("BHK",
-            //           style: TextStyle(fontSize: 15, color: Colors.black)),
-            //       SizedBox(
-            //         width: 3,
-            //       ),
-            //       Text(
-            //         "*",
-            //         style: TextStyle(color: Colors.red, fontSize: 19),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-
-            // Container(
-            //   // change your height based on preference
-            //   height: 28,
-            //   width: double.infinity,
-            //   child: ListView(
-            //     // set the scroll direction to horizontal
-            //     scrollDirection: Axis.horizontal,
-            //     children: <Widget>[
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "1 BHK",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "2 BHK",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "3 BHK",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "4 BHK",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //     ],
-            //   ),
-            // ),
-
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Divider(),
-            // SizedBox(
-            //   height: 30,
-            // ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10.0),
-            //   child: Row(
-            //     children: [
-            //       Text("Tenant",
-            //           style: TextStyle(fontSize: 15, color: Colors.black)),
-            //       SizedBox(
-            //         width: 3,
-            //       ),
-            //       Text(
-            //         "*",
-            //         style: TextStyle(color: Colors.red, fontSize: 19),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-
-            // Container(
-            //   // change your height based on preference
-            //   height: 28,
-            //   width: double.infinity,
-            //   child: ListView(
-            //     // set the scroll direction to horizontal
-            //     scrollDirection: Axis.horizontal,
-            //     children: <Widget>[
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Family",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Student",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Bachelor",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //     ],
-            //   ),
-            // ),
-
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Divider(),
-            // SizedBox(
-            //   height: 30,
-            // ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10.0),
-            //   child: Row(
-            //     children: [
-            //       Text("Preferred Religion",
-            //           style: TextStyle(fontSize: 15, color: Colors.black)),
-            //       SizedBox(
-            //         width: 3,
-            //       ),
-            //       Text(
-            //         "*",
-            //         style: TextStyle(color: Colors.red, fontSize: 19),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-
-            // Container(
-            //   // change your height based on preference
-            //   height: 28,
-            //   width: double.infinity,
-            //   child: ListView(
-            //     // set the scroll direction to horizontal
-            //     scrollDirection: Axis.horizontal,
-            //     children: <Widget>[
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Hindu",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Muslim",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Christian",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 80,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Other",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //     ],
-            //   ),
-            // ),
-
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Divider(),
-            // SizedBox(
-            //   height: 30,
-            // ),
-
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10.0),
-            //   child: Row(
-            //     children: [
-            //       Text("Budget",
-            //           style: TextStyle(fontSize: 15, color: Colors.black)),
-            //       SizedBox(
-            //         width: 3,
-            //       ),
-            //       Text(
-            //         "*",
-            //         style: TextStyle(color: Colors.red, fontSize: 19),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-
-            // Container(
-            //   // change your height based on preference
-            //   height: 28,
-            //   width: double.infinity,
-            //   child: ListView(
-            //     // set the scroll direction to horizontal
-            //     scrollDirection: Axis.horizontal,
-            //     children: <Widget>[
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 120,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Under 10,000",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 120,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "10,000-15,000",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       if ((isClickRent || isClickSell) && !isClickPlot)
-            //         InkWell(
-            //           child: Container(
-            //             height: 40,
-            //             width: 120,
-            //             decoration: BoxDecoration(
-            //               borderRadius: BorderRadius.circular(20),
-            //               border: Border.all(color: Colors.grey),
-            //             ),
-            //             child: Center(
-            //                 child: Text(
-            //               "Above 15,000",
-            //               style: TextStyle(
-            //                   fontSize: 14, color: Colors.black),
-            //             )),
-            //           ),
-            //           onTap: () {},
-            //         ),
-            //     ],
-            //   ),
-            // ),
-
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Divider(),
-            // SizedBox(
-            //   height: 40,
-            // ),
-            // Padding(
-            //   padding: EdgeInsets.only(left: 10.0),
-            //   child: TextFormField(
-            //       decoration: InputDecoration(
-            //     labelText: 'Cost',
-            //     labelStyle: TextStyle(
-            //         color: Colors.black,
-            //         fontStyle: FontStyle.italic,
-            //         fontSize: 15),
-            //     hintText: '₹',
-            //   )),
-            // ),
-            // // SizedBox(height: 40,),
-            // // Padding(
-            // //   padding: EdgeInsets.only(left: 10.0),
-            // //   child: TextFormField(
-            // //       decoration: InputDecoration(
-            // //         labelText: 'Maintenance Charges (Per Month)',
-            // //         labelStyle: TextStyle(
-            // //             color: Colors.black,
-            // //             fontStyle: FontStyle.italic, fontSize: 15),
-            // //         hintText: '₹',
-            // //       )),
-            // // ),
-            // SizedBox(
-            //   height: 40,
-            // ),
-            // Padding(
-            //   padding: EdgeInsets.only(left: 10.0),
-            //   child: TextFormField(
-            //       decoration: InputDecoration(
-            //     labelText: 'Area',
-            //     labelStyle: TextStyle(
-            //         color: Colors.black,
-            //         fontStyle: FontStyle.italic,
-            //         fontSize: 15),
-            //     hintText: 'Sq. ft.',
-            //   )),
-            // ),
-            // SizedBox(
-            //   height: 40,
-            // ),
-            // Padding(
-            //   padding: EdgeInsets.only(left: 10.0),
-            //   child: TextFormField(
-            //       decoration: InputDecoration(
-            //     labelText: 'Property Name',
-            //     labelStyle: TextStyle(
-            //         color: Colors.black,
-            //         fontStyle: FontStyle.italic,
-            //         fontSize: 15),
-            //     hintText: '',
-            //   )),
-            // ),
-            // SizedBox(
-            //   height: 80,
-            // ),
-          ],
-        ),
+          // Padding(
+          //   padding: EdgeInsets.only(left: 10, right: 10),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10),
+          //             side: BorderSide(
+          //               color: CarsColor,
+          //             ),
+          //           ),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //               border: Border.all(
+          //                 color: CarsColor,
+          //                 width: 3.0,
+          //               ),
+          //               color: CarsColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //            // width: MediaQuery.of(context).size.width * 0.28,
+          //             child: Image.asset(
+          //               'assets/images/evcar.jpg',
+          //               // fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //           isClickCars = true;
+          //           isClickScooters = false;
+          //           isClickBikes = false;
+          //           isClickCycles = false;
+          //           isClickBuses = false;
+          //           isClickLogistics = false;
+          //           isClickAuto = false;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = colors.secondary;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrands(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: ScootersColor,
+          //                 // ),
+          //               color: ScootersColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/evscootor.jpg',
+          //               // fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = true;
+          //           isClickBikes = false;
+          //           isClickCycles = false;
+          //           isClickBuses = false;
+          //           isClickLogistics = false;
+          //           isClickAuto = false;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = colors.secondary;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsScooters(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 10,
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(left: 10, right: 10),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: BikesColor,
+          //                 // ),
+          //               color: BikesColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/evbike.jpg',
+          //               //fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = false;
+          //           isClickBikes = true;
+          //           isClickCycles = false;
+          //           isClickBuses = false;
+          //           isClickLogistics = false;
+          //           isClickAuto = false;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = colors.secondary;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsBikes(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: CyclesColor,
+          //                 // ),
+          //               color: CyclesColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/evcycle.jpg',
+          //               //fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = false;
+          //           isClickBikes = false;
+          //           isClickCycles = true;
+          //           isClickBuses = false;
+          //           isClickLogistics = false;
+          //           isClickAuto = false;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = colors.secondary;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsCycles(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 10,
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(left: 10, right: 10),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: BusesColor,
+          //                 // ),
+          //               color: BusesColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/buses.jpg',
+          //               // fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = false;
+          //           isClickBikes = false;
+          //           isClickCycles = false;
+          //           isClickBuses = true;
+          //           isClickLogistics = false;
+          //           isClickAuto = false;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = colors.secondary;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsBuses(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: LogisticsColor,
+          //                 // ),
+          //               color: LogisticsColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/evlogistic.jpg',
+          //               //fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = false;
+          //           isClickBikes = false;
+          //           isClickCycles = false;
+          //           isClickBuses = false;
+          //           isClickLogistics = true;
+          //           isClickAuto = false;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = colors.secondary;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsLogistics(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 10,
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(left: 10, right: 10),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: AutoColor,
+          //                 // ),
+          //               color: AutoColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/evauto.jpg',
+          //               //fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = false;
+          //           isClickBikes = false;
+          //           isClickCycles = false;
+          //           isClickBuses = false;
+          //           isClickLogistics = false;
+          //           isClickAuto = true;
+          //           isClickLoadings = false;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = colors.secondary;
+          //           LoadingsColor = Colors.transparent;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsAuto(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //       InkWell(
+          //         child: Card(
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //           color: Color(0xFFc4e4e1),
+          //           clipBehavior: Clip.antiAlias,
+          //           child: Container(
+          //             decoration: BoxDecoration(
+          //                 // border: Border.all(
+          //                 //   color: LoadingsColor,
+          //                 // ),
+          //               color: LoadingsColor,
+          //             ),
+          //             height: MediaQuery.of(context).size.height * 0.18,
+          //             child: Image.asset(
+          //               'assets/images/evlodings.jpg',
+          //               // fit: BoxFit.cover,
+          //               height: 100,
+          //             ),
+          //           ),
+          //         ),
+          //         onTap: () {
+          //
+          //           isClickCars = false;
+          //           isClickScooters = false;
+          //           isClickBikes = false;
+          //           isClickCycles = false;
+          //           isClickBuses = false;
+          //           isClickLogistics = false;
+          //           isClickAuto = false;
+          //           isClickLoadings = true;
+          //
+          //           CarsColor = Colors.transparent;
+          //           ScootersColor = Colors.transparent;
+          //           BikesColor = Colors.transparent;
+          //           CyclesColor = Colors.transparent;
+          //           BusesColor = Colors.transparent;
+          //           LogisticsColor = Colors.transparent;
+          //           AutoColor = Colors.transparent;
+          //           LoadingsColor = colors.secondary;
+          //
+          //           // Navigator.of(context).push(
+          //           //   MaterialPageRoute(
+          //           //     builder: (context) => AllBrandsLoadings(),
+          //           //   ),
+          //           // );
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // ),
+        ],
       ),
     );
   }

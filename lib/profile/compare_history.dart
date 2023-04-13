@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PopularNewsPage extends StatefulWidget {
-  const PopularNewsPage({Key? key}) : super(key: key);
+class CompareHistory extends StatefulWidget {
+  const CompareHistory({Key? key}) : super(key: key);
 
   @override
-  State<PopularNewsPage> createState() => _PopularNewsPageState();
+  State<CompareHistory> createState() => _CompareHistoryState();
 }
 
-class _PopularNewsPageState extends State<PopularNewsPage> {
+class _CompareHistoryState extends State<CompareHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,72 +17,447 @@ class _PopularNewsPageState extends State<PopularNewsPage> {
             ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: 10,
+                itemCount: 2,
                 itemBuilder: (context, index){
-                  return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        elevation: 1.0,
-                        child: Stack(
-                          children: [
-                            ClipRRect(
-                              borderRadius : BorderRadius.circular(15),
-                              child: Image.asset("assets/images/download.png",
-                                fit: BoxFit.fitHeight,
-                                width: double.infinity,),
-                            ),
-                            Positioned(
-                                left: 0,
-                                right: 0,
-                                bottom: 0,
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(15),
-                                        gradient: LinearGradient(
-                                            colors: [
-                                              Colors.black12.withOpacity(0),
-                                              Colors.black
-                                            ],
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter
-
-                                        )
-                                    ),
-                                    padding: EdgeInsets.fromLTRB(15, 15, 10, 8),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "NEWS HEADLINE",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,fontWeight: FontWeight.bold ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 10,
+                              ),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  children: [
+                                    Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Container(
+                                        height: MediaQuery.of(context).size.height * 0.3,
+                                        width: MediaQuery.of(context).size.width * 0.7,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
                                         ),
-                                        Text("BLAJH `BALH BLAH...", style: TextStyle(color: Colors.white, fontSize: 12),
-                                        )
-                                      ],
-                                    )
-                                )
-                            )
-                          ],
+                                        child: Column(
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Container(
+                                                          decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topLeft: Radius.circular(10),
+                                                              )
+                                                          ),
+                                                          clipBehavior: Clip.antiAlias,
+                                                          child: Image.asset(
+                                                            'assets/images/bike.jpg',
+                                                            // fit: BoxFit.cover,
+                                                            height: 126,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0,top: 5),
+                                                          child: Text("Tata Nexon EV..."),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text("₹ 18.99 Lakh*",
+                                                            style: TextStyle(
+                                                              // color: Colors.grey,
+                                                                fontSize: 12
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Container(
+                                                          decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topRight: Radius.circular(10),
+                                                              )
+                                                          ),
+                                                          clipBehavior: Clip.antiAlias,
+                                                          child: Image.asset(
+                                                            'assets/images/car.jpg',
+                                                            // fit: BoxFit.cover,
+                                                            height: 126,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0,top: 5),
+                                                          child: Text("Mahindra Xuv4..."),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text("₹ 18.99 Lakh*",
+                                                            style: TextStyle(
+                                                              // color: Colors.grey,
+                                                                fontSize: 12
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                                Positioned(
+                                                    left: 100,
+                                                    top: 40,
+                                                    child: CircleAvatar(
+                                                      backgroundColor: Colors.black,
+                                                      child: Text("VS",
+                                                        style: TextStyle(
+                                                            color: Colors.white
+                                                        ),
+                                                      ),
+                                                    )
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 5,right: 5),
+                                              child: Row(
+                                                children: [
+                                                  Text("Tata Nexon EV",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                  Text(" VS ",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                  Text("Mahindra Xuv4",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Container(
+                                        height: MediaQuery.of(context).size.height * 0.3,
+                                        width: MediaQuery.of(context).size.width * 0.7,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Container(
+                                                          decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topLeft: Radius.circular(10),
+                                                              )
+                                                          ),
+                                                          clipBehavior: Clip.antiAlias,
+                                                          child: Image.asset(
+                                                            'assets/images/bike.jpg',
+                                                            // fit: BoxFit.cover,
+                                                            height: 126,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0,top: 5),
+                                                          child: Text("Tata Nexon EV..."),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text("₹ 18.99 Lakh*",
+                                                            style: TextStyle(
+                                                              // color: Colors.grey,
+                                                                fontSize: 12
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Container(
+                                                          decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topRight: Radius.circular(10),
+                                                              )
+                                                          ),
+                                                          clipBehavior: Clip.antiAlias,
+                                                          child: Image.asset(
+                                                            'assets/images/car.jpg',
+                                                            // fit: BoxFit.cover,
+                                                            height: 126,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0,top: 5),
+                                                          child: Text("Mahindra Xuv4..."),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text("₹ 18.99 Lakh*",
+                                                            style: TextStyle(
+                                                              // color: Colors.grey,
+                                                                fontSize: 12
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                                Positioned(
+                                                    left: 100,
+                                                    top: 40,
+                                                    child: CircleAvatar(
+                                                      backgroundColor: Colors.black,
+                                                      child: Text("VS",
+                                                        style: TextStyle(
+                                                            color: Colors.white
+                                                        ),
+                                                      ),
+                                                    )
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 5,right: 5),
+                                              child: Row(
+                                                children: [
+                                                  Text("Tata Nexon EV",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                  Text(" VS ",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                  Text("Mahindra Xuv4",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Container(
+                                        height: MediaQuery.of(context).size.height * 0.3,
+                                        width: MediaQuery.of(context).size.width * 0.7,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Container(
+                                                          decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topLeft: Radius.circular(10),
+                                                              )
+                                                          ),
+                                                          clipBehavior: Clip.antiAlias,
+                                                          child: Image.asset(
+                                                            'assets/images/bike.jpg',
+                                                            // fit: BoxFit.cover,
+                                                            height: 126,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0,top: 5),
+                                                          child: Text("Tata Nexon EV..."),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text("₹ 18.99 Lakh*",
+                                                            style: TextStyle(
+                                                              // color: Colors.grey,
+                                                                fontSize: 12
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Container(
+                                                          decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.only(
+                                                                topRight: Radius.circular(10),
+                                                              )
+                                                          ),
+                                                          clipBehavior: Clip.antiAlias,
+                                                          child: Image.asset(
+                                                            'assets/images/car.jpg',
+                                                            // fit: BoxFit.cover,
+                                                            height: 126,
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0,top: 5),
+                                                          child: Text("Mahindra Xuv4..."),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Padding(
+                                                          padding: const EdgeInsets.only(left: 8.0),
+                                                          child: Text("₹ 18.99 Lakh*",
+                                                            style: TextStyle(
+                                                              // color: Colors.grey,
+                                                                fontSize: 12
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                                Positioned(
+                                                    left: 100,
+                                                    top: 40,
+                                                    child: CircleAvatar(
+                                                      backgroundColor: Colors.black,
+                                                      child: Text("VS",
+                                                        style: TextStyle(
+                                                            color: Colors.white
+                                                        ),
+                                                      ),
+                                                    )
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 5,right: 5),
+                                              child: Row(
+                                                children: [
+                                                  Text("Tata Nexon EV",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                  Text(" VS ",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                  Text("Mahindra Xuv4",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: Colors.blue
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      )
+
+                      ),
+                    ),
                   );
                 }
             ),
-            Container(
-              padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(onPressed: (){}, child: Text("SHOW MORE")),
-                ],
-              ),
-            )
           ],
         ),
       ),

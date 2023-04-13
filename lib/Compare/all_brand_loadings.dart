@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
+import 'package:fuel_free/HomePage/loadings_details.page.dart';
 
-class AllBrandsLoadings extends StatefulWidget {
-  const AllBrandsLoadings({Key? key}) : super(key: key);
+class BrandsLoadings extends StatefulWidget {
+  const BrandsLoadings({Key? key}) : super(key: key);
 
   @override
-  State<AllBrandsLoadings> createState() => _AllBrandsLoadingsState();
+  State<BrandsLoadings> createState() => _BrandsLoadingsState();
 }
 
-class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
+class _BrandsLoadingsState extends State<BrandsLoadings> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,7 +68,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -149,7 +150,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -190,7 +191,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -239,7 +240,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -280,7 +281,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -321,7 +322,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -362,7 +363,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -411,7 +412,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -452,7 +453,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -493,7 +494,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -534,7 +535,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -583,7 +584,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -624,7 +625,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -666,7 +667,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -707,7 +708,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -756,7 +757,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -798,7 +799,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -839,7 +840,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -880,7 +881,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -929,7 +930,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -970,7 +971,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -1011,7 +1012,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -1052,7 +1053,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -1102,7 +1103,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -1143,7 +1144,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },
@@ -1184,7 +1185,7 @@ class _AllBrandsLoadingsState extends State<AllBrandsLoadings> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LoadingsDetailsPage(),
                         ),
                       );
                     },

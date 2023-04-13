@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
 
 class AllBrands extends StatefulWidget {
   const AllBrands({Key? key}) : super(key: key);
@@ -28,43 +28,10 @@ class _AllBrandsState extends State<AllBrands> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // InkWell(
-                  //   child: Column(
-                  //     children: [
-                  //       Card(
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(10)),
-                  //         color: colors.whitebase,
-                  //         clipBehavior: Clip.antiAlias,
-                  //         child: Container(
-                  //           // margin: EdgeInsets.all(8),
-                  //           height: MediaQuery.of(context).size.height * 0.1,
-                  //           width: MediaQuery.of(context).size.width * 0.2,
-                  //           child: Column(
-                  //             mainAxisAlignment: MainAxisAlignment.center,
-                  //             // crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               Image.asset(
-                  //                 'assets/images/ampere.png',
-                  //                 // fit: BoxFit.cover,
-                  //                 height: 40,
-                  //               ),
-                  //
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       Text("Citroen"),
-                  //     ],
-                  //   ),
-                  //   onTap: () {
-                  //     Navigator.pushNamed(context, '/physics');
-                  //   },
-                  // ),
                   InkWell(
                     child: Column(
                       children: [
@@ -82,11 +49,174 @@ class _AllBrandsState extends State<AllBrands> {
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Image.asset(
-                                  'assets/images/HYUNDAI.png',
+                                  'assets/car/AUD.png',
                                   // fit: BoxFit.cover,
                                   height: 40,
                                 ),
-
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Audi"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const CarDetailsPage(
+                            type: "audi",
+                            title: 'Audi',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/BMW.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Bmw"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "bmw",
+                            title: 'Bmw',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/BYD.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Byd"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const CarDetailsPage(
+                            type: "byd",
+                            title: 'Byd',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/CITROEN.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Citroen"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const CarDetailsPage(
+                            type: "citroen",
+                            title: 'Citroen',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/HYUNDAI.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
                               ],
                             ),
                           ),
@@ -97,45 +227,11 @@ class _AllBrandsState extends State<AllBrands> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/Tata.png',
-                                  // fit: BoxFit.cover,
-                                  height: 40,
-                                ),
-
-                              ],
-                            ),
+                          builder: (context) => const CarDetailsPage(
+                            type: "hyundai",
+                            title: 'Hyundai',
                           ),
                         ),
-                        Text("Tata"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
                       );
                     },
                   ),
@@ -156,131 +252,10 @@ class _AllBrandsState extends State<AllBrands> {
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Image.asset(
-                                  'assets/images/Mahindra.png',
+                                  'assets/car/Jaguar.png',
                                   // fit: BoxFit.cover,
                                   height: 40,
                                 ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("Mahindra"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/Kia.png',
-                                  // fit: BoxFit.cover,
-                                  height: 40,
-                                ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("Kia"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/Mercedes-Benz.png',
-                                  // fit: BoxFit.cover,
-                                  height: 40,
-                                ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("Mercedes-B"
-                            "\n      enz"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/Jaguar.png',
-                                  // fit: BoxFit.cover,
-                                  height: 40,
-                                ),
-
                               ],
                             ),
                           ),
@@ -289,87 +264,12 @@ class _AllBrandsState extends State<AllBrands> {
                       ],
                     ),
                     onTap: () {
-                       Navigator.of(context).push(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  // InkWell(
-                  //   child: Column(
-                  //     children: [
-                  //       Card(
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(10)),
-                  //         color: colors.whitebase,
-                  //         clipBehavior: Clip.antiAlias,
-                  //         child: Container(
-                  //           // margin: EdgeInsets.all(8),
-                  //           height: MediaQuery.of(context).size.height * 0.1,
-                  //           width: MediaQuery.of(context).size.width * 0.2,
-                  //           child: Column(
-                  //             mainAxisAlignment: MainAxisAlignment.center,
-                  //             // crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               Image.asset(
-                  //                 'assets/images/one_electric.png',
-                  //                 // fit: BoxFit.cover,
-                  //                 height: 40,
-                  //               ),
-                  //
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       Text("One"),
-                  //     ],
-                  //   ),
-                  //   onTap: () {
-                  //     Navigator.pushNamed(context, '/physics');
-                  //   },
-                  // ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/MG_ZS.png',
-                                  // fit: BoxFit.cover,
-                                  height: 40,
-                                ),
-
-                              ],
-                            ),
+                          builder: (context) => const CarDetailsPage(
+                            type: "jaguar",
+                            title: 'Jaguar',
                           ),
-                        ),
-                        Text("MG"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
                         ),
                       );
                     },
@@ -391,241 +291,72 @@ class _AllBrandsState extends State<AllBrands> {
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Image.asset(
-                                  'assets/images/BMW.png',
+                                  'assets/car/Kia.png',
                                   // fit: BoxFit.cover,
                                   height: 40,
                                 ),
-
                               ],
                             ),
                           ),
                         ),
-                        Text("BMW"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/images/BYD.png',
-                                  // fit: BoxFit.cover,
-                                  height: 40,
-                                ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("BYD"),
+                        Text("Kia"),
                       ],
                     ),
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) =>  CarDetailsPage(
+                            type: "kia",
+                            title: 'Kia',
+                          ),
                         ),
                       );
                     },
                   ),
-                  // InkWell(
-                  //   child: Column(
-                  //     children: [
-                  //       Card(
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(10)),
-                  //         color: colors.whitebase,
-                  //         clipBehavior: Clip.antiAlias,
-                  //         child: Container(
-                  //           // margin: EdgeInsets.all(8),
-                  //           height: MediaQuery.of(context).size.height * 0.1,
-                  //           width: MediaQuery.of(context).size.width * 0.2,
-                  //           child: Column(
-                  //             mainAxisAlignment: MainAxisAlignment.center,
-                  //             // crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               Image.asset(
-                  //                 'assets/images/OSM.png',
-                  //                 // fit: BoxFit.cover,
-                  //                 height: 40,
-                  //               ),
-                  //
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       Text("OSM"),
-                  //     ],
-                  //   ),
-                  //   onTap: () {
-                  //     Navigator.pushNamed(context, '/physics');
-                  //   },
-                  // ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/Mahindra.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Mahindra"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "mahindra",
+                            title: 'Mahindra',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10,right: 10),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       // InkWell(
-            //       //   child: Column(
-            //       //     children: [
-            //       //       Card(
-            //       //         shape: RoundedRectangleBorder(
-            //       //             borderRadius: BorderRadius.circular(10)),
-            //       //         color: colors.whitebase,
-            //       //         clipBehavior: Clip.antiAlias,
-            //       //         child: Container(
-            //       //           // margin: EdgeInsets.all(8),
-            //       //           height: MediaQuery.of(context).size.height * 0.1,
-            //       //           width: MediaQuery.of(context).size.width * 0.2,
-            //       //           child: Column(
-            //       //             mainAxisAlignment: MainAxisAlignment.center,
-            //       //             // crossAxisAlignment: CrossAxisAlignment.start,
-            //       //             children: [
-            //       //               Image.asset(
-            //       //                 'assets/images/ashok_leyland.png',
-            //       //                 // fit: BoxFit.cover,
-            //       //                 height: 40,
-            //       //               ),
-            //       //
-            //       //             ],
-            //       //           ),
-            //       //         ),
-            //       //       ),
-            //       //       Text("Ashok"),
-            //       //     ],
-            //       //   ),
-            //       //   onTap: () {
-            //       //     Navigator.pushNamed(context, '/physics');
-            //       //   },
-            //       // ),
-            //       // InkWell(
-            //       //   child: Column(
-            //       //     children: [
-            //       //       Card(
-            //       //         shape: RoundedRectangleBorder(
-            //       //             borderRadius: BorderRadius.circular(10)),
-            //       //         color: colors.whitebase,
-            //       //         clipBehavior: Clip.antiAlias,
-            //       //         child: Container(
-            //       //           // margin: EdgeInsets.all(8),
-            //       //           height: MediaQuery.of(context).size.height * 0.1,
-            //       //           width: MediaQuery.of(context).size.width * 0.2,
-            //       //           child: Column(
-            //       //             mainAxisAlignment: MainAxisAlignment.center,
-            //       //             // crossAxisAlignment: CrossAxisAlignment.start,
-            //       //             children: [
-            //       //               Image.asset(
-            //       //                 'assets/images/AtherLogo.png',
-            //       //                 // fit: BoxFit.cover,
-            //       //                 height: 40,
-            //       //               ),
-            //       //
-            //       //             ],
-            //       //           ),
-            //       //         ),
-            //       //       ),
-            //       //       Text("Ather"),
-            //       //     ],
-            //       //   ),
-            //       //   onTap: () {
-            //       //     Navigator.pushNamed(context, '/physics');
-            //       //   },
-            //       // ),
-            //       // InkWell(
-            //       //   child: Column(
-            //       //     children: [
-            //       //       Card(
-            //       //         shape: RoundedRectangleBorder(
-            //       //             borderRadius: BorderRadius.circular(10)),
-            //       //         color: colors.whitebase,
-            //       //         clipBehavior: Clip.antiAlias,
-            //       //         child: Container(
-            //       //           // margin: EdgeInsets.all(8),
-            //       //           height: MediaQuery.of(context).size.height * 0.1,
-            //       //           width: MediaQuery.of(context).size.width * 0.2,
-            //       //           child: Column(
-            //       //             mainAxisAlignment: MainAxisAlignment.center,
-            //       //             // crossAxisAlignment: CrossAxisAlignment.start,
-            //       //             children: [
-            //       //               Image.asset(
-            //       //                 'assets/images/atul_auto.png',
-            //       //                 // fit: BoxFit.cover,
-            //       //                 height: 40,
-            //       //               ),
-            //       //
-            //       //             ],
-            //       //           ),
-            //       //         ),
-            //       //       ),
-            //       //       Text("Atul auto"),
-            //       //     ],
-            //       //   ),
-            //       //   onTap: () {
-            //       //     Navigator.pushNamed(context, '/physics');
-            //       //   },
-            //       // ),
-            //       // InkWell(
-            //       //   child: Column(
-            //       //     children: [
-            //       //       Card(
-            //       //         shape: RoundedRectangleBorder(
-            //       //             borderRadius: BorderRadius.circular(10)),
-            //       //         color: colors.whitebase,
-            //       //         clipBehavior: Clip.antiAlias,
-            //       //         child: Container(
-            //       //           // margin: EdgeInsets.all(8),
-            //       //           height: MediaQuery.of(context).size.height * 0.1,
-            //       //           width: MediaQuery.of(context).size.width * 0.2,
-            //       //           child: Column(
-            //       //             mainAxisAlignment: MainAxisAlignment.center,
-            //       //             // crossAxisAlignment: CrossAxisAlignment.start,
-            //       //             children: [
-            //       //               Image.asset(
-            //       //                 'assets/images/bajaj.png',
-            //       //                 // fit: BoxFit.cover,
-            //       //                 height: 40,
-            //       //               ),
-            //       //
-            //       //             ],
-            //       //           ),
-            //       //         ),
-            //       //       ),
-            //       //       Text("Bajaj"),
-            //       //     ],
-            //       //   ),
-            //       //   onTap: () {
-            //       //     Navigator.pushNamed(context, '/physics');
-            //       //   },
-            //       // ),
-            //     ],
-            //   ),
-            // ),
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -646,11 +377,127 @@ class _AllBrandsState extends State<AllBrands> {
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Image.asset(
-                                  'assets/images/Porsche.png',
+                                  'assets/car/Mercedes-Benz.png',
                                   // fit: BoxFit.cover,
                                   height: 40,
                                 ),
-
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Mercedes-Benz"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "mercedes-Benz",
+                            title: 'Mercedes-Benz',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/MG_ZS.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Mg"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "mg",
+                            title: 'Mg',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/PMV_LOGO.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Pmv"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "pmv",
+                            title: 'Pmv',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/Porsche.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
                               ],
                             ),
                           ),
@@ -661,405 +508,21 @@ class _AllBrandsState extends State<AllBrands> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // Image.asset(
-                                //   'assets/images/euler.png',
-                                //   // fit: BoxFit.cover,
-                                //   height: 40,
-                                // ),
-
-                              ],
-                            ),
+                          builder: (context) =>  CarDetailsPage(
+                            type: "Porsche",
+                            title: 'Porsche',
                           ),
                         ),
-                        Text("Audi"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
                       );
                     },
                   ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // Image.asset(
-                                //   'assets/images/euler.png',
-                                //   // fit: BoxFit.cover,
-                                //   height: 40,
-                                // ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("Volvo"),
-                      ],
-                    ),
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  // InkWell(
-                  //   child: Column(
-                  //     children: [
-                  //       Card(
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(10)),
-                  //         color: colors.whitebase,
-                  //         clipBehavior: Clip.antiAlias,
-                  //         child: Container(
-                  //           // margin: EdgeInsets.all(8),
-                  //           height: MediaQuery.of(context).size.height * 0.1,
-                  //           width: MediaQuery.of(context).size.width * 0.2,
-                  //           child: Column(
-                  //             mainAxisAlignment: MainAxisAlignment.center,
-                  //             // crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               Image.asset(
-                  //                 'assets/images/hero_electric.png',
-                  //                 // fit: BoxFit.cover,
-                  //                 height: 40,
-                  //               ),
-                  //
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       Text("Hero"),
-                  //     ],
-                  //   ),
-                  //   onTap: () {
-                  //     Navigator.pushNamed(context, '/physics');
-                  //   },
-                  // ),
                 ],
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10,right: 10),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/jbm.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("JBM"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/kabira_mobility.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Kabira Mobility"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/kinetic-green.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Kinetic"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/lohia.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Lohia"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10,right: 10),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/mini_metro_ev.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Mini metro"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/oben_electric.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Oben"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/okinawa.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Okinawa"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/ola_electric.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("Ola"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //     ],
-            //   ),
-            // ),
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
                     child: Column(
@@ -1077,130 +540,109 @@ class _AllBrandsState extends State<AllBrands> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // Image.asset(
-                                //   'assets/images/olectra.png',
-                                //   // fit: BoxFit.cover,
-                                //   height: 40,
-                                // ),
-
+                                Image.asset(
+                                  'assets/car/STROM__MOTORS.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
                               ],
                             ),
                           ),
                         ),
-                        Text("Pmv"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // Image.asset(
-                                //   'assets/images/piaggio.png',
-                                //   // fit: BoxFit.cover,
-                                //   height: 40,
-                                // ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("Strom Motors"),
-                      ],
-                    ),
-                    onTap: () {
-                       Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  // InkWell(
-                  //   child: Column(
-                  //     children: [
-                  //       Card(
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(10)),
-                  //         color: colors.whitebase,
-                  //         clipBehavior: Clip.antiAlias,
-                  //         child: Container(
-                  //           // margin: EdgeInsets.all(8),
-                  //           height: MediaQuery.of(context).size.height * 0.1,
-                  //           width: MediaQuery.of(context).size.width * 0.2,
-                  //           child: Column(
-                  //             mainAxisAlignment: MainAxisAlignment.center,
-                  //             // crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               Image.asset(
-                  //                 'assets/images/pmi.png',
-                  //                 // fit: BoxFit.cover,
-                  //                 height: 40,
-                  //               ),
-                  //
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       Text("pmi"),
-                  //     ],
-                  //   ),
-                  //   onTap: () {
-                  //     Navigator.pushNamed(context, '/physics');
-                  //   },
-                  // ),
-                  InkWell(
-                    child: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          color: colors.whitebase,
-                          clipBehavior: Clip.antiAlias,
-                          child: Container(
-                            // margin: EdgeInsets.all(8),
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width * 0.2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // Image.asset(
-                                //   'assets/images/eicher.png',
-                                //   // fit: BoxFit.cover,
-                                //   height: 40,
-                                // ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text("Citroen "),
+                        Text("Strom"),
                       ],
                     ),
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) =>  CarDetailsPage(
+                            type: "strom",
+                            title: 'Strom',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/TATA_LOGO.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Tata"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "tata",
+                            title: 'Tata',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  InkWell(
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          color: colors.whitebase,
+                          clipBehavior: Clip.antiAlias,
+                          child: Container(
+                            // margin: EdgeInsets.all(8),
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  'assets/car/VOLVO.png',
+                                  // fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text("Volvo"),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CarDetailsPage(
+                            type: "volvo",
+                            title: 'Volvo',
+                          ),
                         ),
                       );
                     },
@@ -1208,84 +650,6 @@ class _AllBrandsState extends State<AllBrands> {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 10,right: 10),
-            //   child: Row(
-            //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       InkWell(
-            //         child: Column(
-            //           children: [
-            //             Card(
-            //               shape: RoundedRectangleBorder(
-            //                   borderRadius: BorderRadius.circular(10)),
-            //               color: colors.whitebase,
-            //               clipBehavior: Clip.antiAlias,
-            //               child: Container(
-            //                 // margin: EdgeInsets.all(8),
-            //                 height: MediaQuery.of(context).size.height * 0.1,
-            //                 width: MediaQuery.of(context).size.width * 0.2,
-            //                 child: Column(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   // crossAxisAlignment: CrossAxisAlignment.start,
-            //                   children: [
-            //                     Image.asset(
-            //                       'assets/images/solaris.png',
-            //                       // fit: BoxFit.cover,
-            //                       height: 40,
-            //                     ),
-            //
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //             Text("solaris"),
-            //           ],
-            //         ),
-            //         onTap: () {
-            //           Navigator.pushNamed(context, '/physics');
-            //         },
-            //       ),
-            //       SizedBox(
-            //         width: 6,
-            //       ),
-            //       // InkWell(
-            //       //   child: Column(
-            //       //     children: [
-            //       //       Card(
-            //       //         shape: RoundedRectangleBorder(
-            //       //             borderRadius: BorderRadius.circular(10)),
-            //       //         color: colors.whitebase,
-            //       //         clipBehavior: Clip.antiAlias,
-            //       //         child: Container(
-            //       //           // margin: EdgeInsets.all(8),
-            //       //           height: MediaQuery.of(context).size.height * 0.1,
-            //       //           width: MediaQuery.of(context).size.width * 0.2,
-            //       //           child: Column(
-            //       //             mainAxisAlignment: MainAxisAlignment.center,
-            //       //             // crossAxisAlignment: CrossAxisAlignment.start,
-            //       //             children: [
-            //       //               Image.asset(
-            //       //                 'assets/images/zhongtong.png',
-            //       //                 // fit: BoxFit.cover,
-            //       //                 height: 40,
-            //       //               ),
-            //       //
-            //       //             ],
-            //       //           ),
-            //       //         ),
-            //       //       ),
-            //       //       Text("Zhongtong"),
-            //       //     ],
-            //       //   ),
-            //       //   onTap: () {
-            //       //     Navigator.pushNamed(context, '/physics');
-            //       //   },
-            //       // ),
-            //
-            //     ],
-            //   ),
-            // ),
           ],
         ),
       ),

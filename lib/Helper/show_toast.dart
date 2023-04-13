@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-showToast(msg, time) {
+void showToastMessage(String message){
   Fluttertoast.showToast(
-      msg: "$msg",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.TOP_RIGHT,
-      timeInSecForIosWeb: time,
-      backgroundColor: Colors.black,
-      textColor: Colors.white,
-      fontSize: 12.0);
+
+      msg: message,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIosWeb: 1,
+      textColor: Colors.green,
+      backgroundColor: Colors.white,
+      fontSize: 24
+  );
 }

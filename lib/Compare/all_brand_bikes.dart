@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/bike_details.page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
 
-class AllBrandsBikes extends StatefulWidget {
-  const AllBrandsBikes({Key? key}) : super(key: key);
+class BrandsBikes extends StatefulWidget {
+  const BrandsBikes({Key? key}) : super(key: key);
 
   @override
-  State<AllBrandsBikes> createState() => _AllBrandsBikesState();
+  State<BrandsBikes> createState() => _BrandsBikesState();
 }
 
-class _AllBrandsBikesState extends State<AllBrandsBikes> {
+class _BrandsBikesState extends State<BrandsBikes> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,7 +68,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -149,7 +150,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -190,7 +191,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -239,7 +240,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -280,7 +281,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -321,7 +322,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -363,7 +364,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -412,7 +413,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -453,7 +454,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -494,7 +495,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -535,7 +536,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -584,7 +585,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -625,7 +626,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -666,7 +667,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -707,7 +708,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -756,7 +757,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -797,7 +798,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -838,7 +839,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },
@@ -879,7 +880,7 @@ class _AllBrandsBikesState extends State<AllBrandsBikes> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BikeDetailsPage(),
                         ),
                       );
                     },

@@ -1,5 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
+import 'package:fuel_free/Screen/Utilities/charging_page.dart';
+import 'package:fuel_free/Screen/Utilities/ev_agencies_page.dart';
+import 'package:fuel_free/Screen/Utilities/service_center_page.dart';
 
 class UtilitiesPage extends StatefulWidget {
   const UtilitiesPage({Key? key}) : super(key: key);
@@ -26,1492 +30,200 @@ class _UtilitiesPageState extends State<UtilitiesPage> {
         backgroundColor: colors.Appbar,
         iconTheme: IconThemeData(color: colors.secondary),
         elevation: 1,
-        title: Center(child: Text("Utilities",
+        title: Center(
+            child: Text("Utilities",
           style: TextStyle(
               color: colors.secondary,
               fontSize: 16
           ),
         )),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10,top: 20),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  InkWell(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      width: MediaQuery.of(context).size.width * 0.29,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: EVAgenciesColor,
-                          border: Border.all(
-                            color: Colors.grey,
-                          )
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 10,right: 10,top: 20),
+            //   child: CarouselSlider.builder(
+            //     options: CarouselOptions(
+            //       height: MediaQuery.of(context).size.height * 0.1,
+            //       viewportFraction: 1,
+            //       enableInfiniteScroll: true,
+            //       autoPlay: true,
+            //       autoPlayInterval: Duration(seconds: 4),
+            //       autoPlayAnimationDuration: Duration(milliseconds: 1500),
+            //       autoPlayCurve: Curves.fastOutSlowIn,
+            //       enlargeCenterPage: true,
+            //     ),
+            //     itemCount: 3,
+            //     itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
+            //       return  Container(
+            //         margin: EdgeInsets.symmetric(horizontal: 5.0),
+            //         child: ClipRRect(
+            //           //borderRadius: BorderRadius.circular(16.0),
+            //             child: Image.asset("assets/images/EVoffer.png",)
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
+            CarouselSlider(
+              options: CarouselOptions(
+                height: MediaQuery.of(context).size.height * 0.3,
+                viewportFraction: 1.0,
+                enlargeCenterPage: false,
+                autoPlay: true,
+                // autoPlay: false,
+              ),
+              items: [
+                Padding(
+                    padding: EdgeInsets.only(right: 4, left: 4),
+                    child: Image(
+                      image: AssetImage('assets/images/Banner1.png',
                       ),
-                      child:  Center(
-                          child: Text("EV Agencies",
-                            style: TextStyle(
-                                fontSize: 12
-                            ),
-                          )
+                      height: 50,
+                      //fit: BoxFit.cover
+                    )),
+                Padding(
+                    padding: EdgeInsets.only(right: 4, left: 4),
+                    child: Image(
+                      image: AssetImage(
+                        'assets/images/Banner2.png',
                       ),
+                      height: 50,
+                      //fit: BoxFit.cover
+                    )),
+                Padding(
+                    padding: EdgeInsets.only(right: 4, left: 4),
+                    child: Image(
+                      image: AssetImage(
+                        'assets/images/Banner3.png',
+                      ),
+                      height: 80,
+                      //fit: BoxFit.cover
+                    )),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,right: 10),
+              child: InkWell(
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    width: MediaQuery.of(context).size.width * 8,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/EV DEALER.png"),
+                            fit: BoxFit.cover),
+                      color: colors.primary
                     ),
-                    onTap: (){
-                      setState(() {
-                        isClickEVAgencies = true;
-                        isClickService = false;
-                        isClickChanging = false;
-                        EVAgenciesColor = colors.secondary;
-                        ServiceColor = Colors.transparent;
-                        ChangingColor = Colors.transparent;
+                    // child: Center(
+                    //     child: Text("EV Dealers",
+                    //       style: TextStyle(
+                    //         fontSize: 20,
+                    //         fontWeight: FontWeight.w600
+                    //       ),
+                    //     ),
+                    // ),
 
-
-                      });
-                    },
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  InkWell(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      width: MediaQuery.of(context).size.width * 0.29,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: ServiceColor,
-                          border: Border.all(
-                              color: Colors.grey
-                          )
-
-                      ),
-                      child:  Center(
-                          child: Text("Service Center",
-                            style: TextStyle(
-                                fontSize: 12
-                            ),
-                          )
-                      ),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const EVAgencies(),
                     ),
-                    onTap: (){
-                      setState(() {
-                        isClickEVAgencies = false;
-                        isClickService = true;
-                        isClickChanging = false;
-                        EVAgenciesColor = Colors.transparent;
-                        ServiceColor = colors.secondary;
-                        ChangingColor = Colors.transparent;
-
-                      });
-                    },
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  InkWell(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      width: MediaQuery.of(context).size.width * 0.29,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: ChangingColor,
-                          border: Border.all(
-                              color: Colors.grey
-                          )
-                      ),
-                      child: Center(
-                          child: Text("Changing points",
-                            style: TextStyle(
-                                fontSize: 12
-                            ),
-                          )
-                      ),
-                    ),
-                    onTap: (){
-                      setState(() {
-                        isClickEVAgencies = false;
-                        isClickService = false;
-                        isClickChanging = true;
-                        EVAgenciesColor = Colors.transparent;
-                        ServiceColor = Colors.transparent;
-                        ChangingColor = colors.secondary;
-                      });
-                    },
-                  ),
-                ]
+                  );
+                },
               ),
             ),
-          ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,right: 10),
+              child: InkWell(
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    width: MediaQuery.of(context).size.width * 8,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/EV Service center.png"),
+                            fit: BoxFit.cover),
+                        color: colors.primary
+                    ),
+                    // child: Center(
+                    //   child: Text("Service Center",
+                    //     style: TextStyle(
+                    //         fontSize: 20,
+                    //         fontWeight: FontWeight.w600
+                    //     ),
+                    //   ),
+                    // ),
 
-          // Column(
-          //   children: [
-          //     Padding(
-          //       padding: EdgeInsets.all(0),
-          //       child: Visibility(
-          //         visible: isClickEVAgencies,
-          //         child: Container(
-          //           // width: MediaQuery.of(context).size.width * 0.95,
-          //             height: MediaQuery.of(context).size.height * 0.55,
-          //             color: Colors.transparent,
-          //             child: Column(
-          //                 children: [
-          //               Padding(
-          //                 padding: EdgeInsets.only(left: 20, right: 20),
-          //                 child: Row(
-          //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                   children: [
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                   ],
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 18,
-          //               ),
-          //               Padding(
-          //                 padding: EdgeInsets.only(left: 20, right: 20),
-          //                 child: Row(
-          //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                   children: [
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                   ],
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 20,
-          //               ),
-          //               InkWell(
-          //                 child: Padding(
-          //                   padding: EdgeInsets.only(left: 20, right: 20),
-          //                   child: Container(
-          //                     height:
-          //                     MediaQuery.of(context).size.height * 0.07,
-          //                     width: MediaQuery.of(context).size.width * 0.8,
-          //                     decoration: BoxDecoration(
-          //                         borderRadius: BorderRadius.circular(10),
-          //                         // color: CarColor,
-          //                         border: Border.all(
-          //                           color: Colors.grey,
-          //                         )),
-          //                     child: Center(
-          //                         child: Text(
-          //                           "Show All >",
-          //                           style: TextStyle(fontSize: 12),
-          //                         )),
-          //                   ),
-          //                 ),
-          //                 onTap: () {
-          //                   setState(() {
-          //                     isClickCar = true;
-          //                     isClickCar1 = false;
-          //                     isClickCar2 = false;
-          //                     isClickCar3 = false;
-          //
-          //                     CarColor = colors.secondary;
-          //                     Car1Color = Colors.transparent;
-          //                     Car2Color = Colors.transparent;
-          //                     Car3Color = Colors.transparent;
-          //                   });
-          //                 },
-          //               ),
-          //             ]),
-          //         ),
-          //       ),
-          //     ),
-          //     Padding(
-          //       padding: EdgeInsets.all(0),
-          //       child: Visibility(
-          //         visible: isClickService,
-          //         child: Container(
-          //           // width: MediaQuery.of(context).size.width * 0.95,
-          //             height: MediaQuery.of(context).size.height,
-          //             color: Colors.white,
-          //             child: Column(
-          //                 children: [
-          //               Padding(
-          //                 padding: EdgeInsets.only(left: 20, right: 20),
-          //                 child: Row(
-          //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                   children: [
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                   ],
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 18,
-          //               ),
-          //               Padding(
-          //                 padding: EdgeInsets.only(left: 20, right: 20),
-          //                 child: Row(
-          //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                   children: [
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                   ],
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 20,
-          //               ),
-          //               InkWell(
-          //                 child: Padding(
-          //                   padding: EdgeInsets.only(left: 20, right: 20),
-          //                   child: Container(
-          //                     height:
-          //                     MediaQuery.of(context).size.height * 0.07,
-          //                     width: MediaQuery.of(context).size.width * 0.8,
-          //                     decoration: BoxDecoration(
-          //                         borderRadius: BorderRadius.circular(10),
-          //                         // color: CarColor,
-          //                         border: Border.all(
-          //                           color: Colors.grey,
-          //                         )),
-          //                     child: Center(
-          //                         child: Text(
-          //                           "Show All >",
-          //                           style: TextStyle(fontSize: 12),
-          //                         )),
-          //                   ),
-          //                 ),
-          //                 onTap: () {
-          //                   setState(() {
-          //                     isClickCar = true;
-          //                     isClickCar1 = false;
-          //                     isClickCar2 = false;
-          //                     isClickCar3 = false;
-          //
-          //                     CarColor = colors.secondary;
-          //                     Car1Color = Colors.transparent;
-          //                     Car2Color = Colors.transparent;
-          //                     Car3Color = Colors.transparent;
-          //                   });
-          //                 },
-          //               ),
-          //             ]),
-          //         ),
-          //       ),
-          //     ),
-          //     Padding(
-          //       padding: EdgeInsets.all(0),
-          //       child: Visibility(
-          //         visible: isClickChanging,
-          //         child: Container(
-          //           // width: MediaQuery.of(context).size.width * 0.95,
-          //             height: MediaQuery.of(context).size.height,
-          //             color: Colors.white,
-          //             child: Column(children: [
-          //               Padding(
-          //                 padding: EdgeInsets.only(left: 20, right: 20),
-          //                 child: Row(
-          //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                   children: [
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                   ],
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 18,
-          //               ),
-          //               Padding(
-          //                 padding: EdgeInsets.only(left: 20, right: 20),
-          //                 child: Row(
-          //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                   children: [
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                     InkWell(
-          //                       child: Column(
-          //                         mainAxisAlignment: MainAxisAlignment.start,
-          //                         crossAxisAlignment:
-          //                         CrossAxisAlignment.start,
-          //                         children: [
-          //                           Card(
-          //                             shape: RoundedRectangleBorder(
-          //                                 borderRadius:
-          //                                 BorderRadius.circular(10)),
-          //                             color: Color(0xFFc4e4e1),
-          //                             clipBehavior: Clip.antiAlias,
-          //                             child: Container(
-          //                               // margin: EdgeInsets.all(8),
-          //                               height: MediaQuery.of(context)
-          //                                   .size
-          //                                   .height *
-          //                                   0.13,
-          //                               width: MediaQuery.of(context)
-          //                                   .size
-          //                                   .width *
-          //                                   0.4,
-          //                               child: Column(
-          //                                 // mainAxisAlignment: MainAxisAlignment.start,
-          //                                 // crossAxisAlignment: CrossAxisAlignment.start,
-          //                                 children: [
-          //                                   // Image.asset(
-          //                                   //   'assets/images/home.jpg',
-          //                                   //   fit: BoxFit.cover,
-          //                                   //   // height: 120,
-          //                                   // ),
-          //                                 ],
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Maruti Wagon R",
-          //                               style: TextStyle(
-          //                                 fontSize: 12,
-          //                               ),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           Padding(
-          //                             padding:
-          //                             const EdgeInsets.only(left: 10),
-          //                             child: Text(
-          //                               "Starting @ ₹ 1.4 Lakh*",
-          //                               style: TextStyle(
-          //                                   fontSize: 14,
-          //                                   color: Colors.black,
-          //                                   fontWeight: FontWeight.w600),
-          //                             ),
-          //                           ),
-          //                           SizedBox(
-          //                             height: 4,
-          //                           ),
-          //                           InkWell(
-          //                             child: Padding(
-          //                               padding:
-          //                               const EdgeInsets.only(left: 10),
-          //                               child: Text(
-          //                                 "21 Available Cars",
-          //                                 style: TextStyle(
-          //                                   fontSize: 10,
-          //                                   //color: Colors.red,
-          //                                   // fontWeight: FontWeight.w600
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             onTap: () {
-          //                               Navigator.of(context).push(
-          //                                 MaterialPageRoute(
-          //                                   builder: (context) =>
-          //                                   const ViewCurrentOffers(),
-          //                                 ),
-          //                               );
-          //                             },
-          //                           ),
-          //                         ],
-          //                       ),
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                             context,
-          //                             MaterialPageRoute(
-          //                                 builder: (context) => Cardetails(
-          //                                   // type: "house",
-          //                                   // title: 'House',
-          //                                 )));
-          //                       },
-          //                     ),
-          //                   ],
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 20,
-          //               ),
-          //               InkWell(
-          //                 child: Padding(
-          //                   padding: EdgeInsets.only(left: 20, right: 20),
-          //                   child: Container(
-          //                     height:
-          //                     MediaQuery.of(context).size.height * 0.07,
-          //                     width: MediaQuery.of(context).size.width * 0.8,
-          //                     decoration: BoxDecoration(
-          //                         borderRadius: BorderRadius.circular(10),
-          //                         // color: CarColor,
-          //                         border: Border.all(
-          //                           color: Colors.grey,
-          //                         )),
-          //                     child: Center(
-          //                         child: Text(
-          //                           "Show All >",
-          //                           style: TextStyle(fontSize: 12),
-          //                         )),
-          //                   ),
-          //                 ),
-          //                 onTap: () {
-          //                   setState(() {
-          //                     isClickCar = true;
-          //                     isClickCar1 = false;
-          //                     isClickCar2 = false;
-          //                     isClickCar3 = false;
-          //
-          //                     CarColor = colors.secondary;
-          //                     Car1Color = Colors.transparent;
-          //                     Car2Color = Colors.transparent;
-          //                     Car3Color = Colors.transparent;
-          //                   });
-          //                 },
-          //               ),
-          //             ]),
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // ),
-        ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ServiceCenter(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,right: 10),
+              child: InkWell(
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    width: MediaQuery.of(context).size.width * 8,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/charging-station1.png"),
+                            fit: BoxFit.cover),
+                        color: colors.primary
+                    ),
+                    // child: Center(
+                    //   child: Text("Charging points",
+                    //     style: TextStyle(
+                    //         fontSize: 20,
+                    //         fontWeight: FontWeight.w600
+                    //     ),
+                    //   ),
+                    // ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ChargingPoint(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

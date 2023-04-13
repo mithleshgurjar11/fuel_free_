@@ -1,12 +1,18 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
 import 'package:fuel_free/Model/car_model.dart';
 import 'package:fuel_free/Screen/Utilities/product_details_page.dart';
 import 'package:fuel_free/book_free_ride.dart';
 import 'package:fuel_free/utils/api.dart';
+import 'package:shimmer/shimmer.dart';
+
 
 class CarDetailsPage extends StatefulWidget {
-  const CarDetailsPage({Key? key}) : super(key: key);
+  const CarDetailsPage({Key? key, required this.title, required this.type}) : super(key: key);
+
+  final String title;
+  final String type;
 
   @override
   State<CarDetailsPage> createState() => _CarDetailsPageState();
@@ -54,7 +60,6 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
               child: Row(
                 children: [
                   Text("230 Cars available",
-
                   ),
                 ],
               ),
@@ -78,6 +83,8 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
                         itemCount: snapshot.data!.type?.length,
                         shrinkWrap: true,
                         itemBuilder:  (BuildContext context, int index) {
+
+                    // snapshot.data?.type![index].productName == "Audi" ?
                           return Padding(
                             padding: const EdgeInsets.only(left: 10, right: 10,top: 20),
                             child: InkWell(
@@ -85,7 +92,7 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                  // color: Colors.grey
+                                   color: Colors.grey.shade200
                                   ),
                                   child: Column(
                                     children: [
@@ -95,11 +102,30 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
                                               children:[
                                                 ClipRRect(
                                                   borderRadius: BorderRadius.circular(20),
-                                                  child: Image.asset('assets/images/STROM.jpg',
-                                                    height: MediaQuery.of(context).size.height * 0.2,
-                                                    width:MediaQuery.of(context).size.width ,
-                                                    fit: BoxFit.fill,),
-                                                ),
+                                                  child: CachedNetworkImage(imageUrl: "http://api.fuelfree.in${snapshot.data?.type![index].productImage[0]}",
+                                                    placeholder: (context, url) => SizedBox(
+                                                      width: 200.0,
+                                                      height: 100.0,
+                                                      child: Shimmer.fromColors(
+                                                        baseColor: Colors.grey,
+                                                        highlightColor: Colors.black,
+                                                        child: Text(
+                                                          'Loading...',
+                                                          textAlign: TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontSize: 40.0,
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    )
+                                                    ,)
+                                                  // child: Image.asset('assets/images/STROM.jpg',
+                                                  //   height: MediaQuery.of(context).size.height * 0.2,
+                                                  //   width:MediaQuery.of(context).size.width ,
+                                                  //   fit: BoxFit.fill,),
+                                               ),
                                                 Positioned(
                                                   top: 10,
                                                   //left: 1,
@@ -205,6 +231,7 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
                               },
                             ),
                           );
+                        // : Container();
                         },
                       ),
                     );

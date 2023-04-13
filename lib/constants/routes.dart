@@ -1,11 +1,11 @@
 const String splashScreenr_route = '/splashScreen';
 const String introslider_route = '/introsliderIntroslider';
-const String login_route = '/login';
-const String registrationPage_route = '/registrationPage';
+const String loginSignupScreen_route = '/loginSignupScreen';
 const String forgetPassword_route = '/forgetPassword';
 const String changePassword_route = '/changePassword';
 const String otpPage_route = '/otpPage';
 const String bottomNavigation_route = '/bottomNavigation';
+const String drawerPage_route = '/drawerPage';
 const String home_route = '/home';
 const String notifications_route = '/notifications';
 const String allSubject_route = '/allSubject';

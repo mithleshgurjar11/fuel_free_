@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Authentication/change_Password.dart';
+import 'package:fuel_free/Helper/color.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);
@@ -16,31 +17,17 @@ class _ForgetPasswordState extends State<ForgetPassword> {
     return Scaffold(
         backgroundColor: Color(0xffE9F0FF),
         appBar: AppBar(
-            title: Text(
-              'Forgot Pasword',
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            centerTitle: true,
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/appbar.png'),
-                      fit: BoxFit.fill)),
-            ),
-            leading: InkWell(
-              child: Container(
-                margin: EdgeInsets.all(10),
-                height: 20,
-                width: 30,
-                decoration: BoxDecoration(
-                    color: Color(0xff8D5321),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Icon(Icons.keyboard_arrow_left_outlined),
-              ),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            )),
+          backgroundColor: colors.Appbar,
+          iconTheme: IconThemeData(color: colors.secondary),
+          elevation: 1,
+          title: Center(
+              child: Text("Forget Password",
+                style: TextStyle(
+                    color: colors.secondary,
+                    fontSize: 16
+                ),
+              )),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -48,7 +35,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 padding: EdgeInsets.only(top: 50),
                 child: Center(
                   child: Image.asset(
-                    "assets/forgetpasswordimage.png",
+                    "assets/images/forgetpasswordimage.png",
                     height: 150,
                   ),
                 ),
@@ -113,17 +100,19 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               ),
               InkWell(
                 child: Container(
-                  height: 60,
+                  height: MediaQuery.of(context).size.height * 0.07,
                   width: MediaQuery.of(context).size.width / 1.1,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(
-                          image: AssetImage('assets/button_image.png'),
-                          fit: BoxFit.fill)),
+                      color: colors.secondary
+                  ),
                   child: Center(
                     child: Text(
                       'Send',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600
+                      ),
                     ),
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:property_buy_seller/screen/propertyPages/data.dart';
+import 'package:fuel_free/Helper/color.dart';
+
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -9,65 +10,1171 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
-  var _address = TextEditingController();
-  var _city = TextEditingController();
-  var _state = TextEditingController();
-  var _pincode = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "*",
-              style: TextStyle(color: Colors.red, fontSize: 20),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
             ),
-            SizedBox(
-              width: 3,
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
             ),
-            Text(
-              "Indicates a Mandatory Field",
-              style: TextStyle(fontSize: 17, color: Colors.black,fontWeight: FontWeight.bold),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
             ),
+
           ],
         ),
-        TextFormField(
-          controller: _address,
-          onChanged: (value) {
-            setState(() {
-              Data.isClickAddress = _address!.text.toString();
-            });
-          },
-          decoration: InputDecoration(labelText: "Address"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
         ),
-        TextFormField(
-          controller: _city,
-          onChanged: (value) {
-            setState(() {
-              Data.isClickCity = _city!.text.toString();
-            });
-          },
-          decoration: InputDecoration(labelText: "City Here"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
         ),
-        TextFormField(
-          controller: _state,
-          onChanged: (value) {
-            setState(() {
-              Data.isClickState = _state!.text.toString();
-            });
-          },
-          decoration: InputDecoration(labelText: "State"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
         ),
-        TextFormField(
-          controller: _pincode,
-          onChanged: (value) {
-            setState(() {
-              Data.isClickPinCode = _pincode!.text.toString();
-            });
-          },
-          decoration: InputDecoration(labelText: "Pin Code"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ampere.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ampere",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/HYUNDAI.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("TVS Motor",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+            InkWell(
+              child: Column(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    color: colors.whitebase,
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                      // margin: EdgeInsets.all(8),
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/ola_electric.png',
+                            // fit: BoxFit.cover,
+                            height: 40,
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                  Text("Ola",
+                    style: TextStyle(
+                        fontSize: 10
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const CarDetailsPage(),
+                //   ),
+                // );
+              },
+            ),
+
+          ],
         ),
       ],
     );

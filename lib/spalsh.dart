@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vendore_app/home_page.dart';
+import 'package:fuel_free/Authentication/login_page.dart';
+import 'package:fuel_free/Drawer/drawer.dart';
 
-import 'bottom_bar/bottom_bar.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => BottomNavigation(),
+              builder: (context) => LoginSignupScreen(),
             )
         )
     );
@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
     mainAxisSize: MainAxisSize.max,
     children: [
     Image.asset(
-    'assets/images/splace.png',
+    'assets/images/splash.png',
       fit: BoxFit.fill,
     )
     ]

@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
+import 'package:fuel_free/Model/logistics_model.dart';
 import 'package:fuel_free/Screen/Utilities/product_details_page.dart';
 import 'package:fuel_free/book_free_ride.dart';
 import 'package:fuel_free/utils/api.dart';
 
 import '../Model/bike_model.dart';
 
-class BusesDetailsPage extends StatefulWidget {
-  const BusesDetailsPage({Key? key}) : super(key: key);
+class LogisticsDetailsPage extends StatefulWidget {
+  const LogisticsDetailsPage({Key? key}) : super(key: key);
 
   @override
-  State<BusesDetailsPage> createState() => _BusesDetailsPageState();
+  State<LogisticsDetailsPage> createState() => _LogisticsDetailsPageState();
 }
 
-class _BusesDetailsPageState extends State<BusesDetailsPage> {
-
-
+class _LogisticsDetailsPageState extends State<LogisticsDetailsPage> {
   @override
   void initState() {
     //newCar();
@@ -23,21 +22,20 @@ class _BusesDetailsPageState extends State<BusesDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: colors.Appbar,
         iconTheme: IconThemeData(color: colors.secondary),
         elevation: 1,
         title: Center(
-          child: Text("Bike",
-            style: TextStyle(
-                color: colors.secondary,
-                fontSize: 16
-            ),
+          child: Text(
+            "Logistics",
+            style: TextStyle(color: colors.secondary, fontSize: 16),
           ),
         ),
         actions: [
-          Icon(Icons.favorite_border_outlined,
+          Icon(
+            Icons.favorite_border_outlined,
           ),
           SizedBox(
             width: 10,
@@ -47,7 +45,7 @@ class _BusesDetailsPageState extends State<BusesDetailsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            /*SizedBox(
               height: 20,
             ),
             Padding(
@@ -59,28 +57,30 @@ class _BusesDetailsPageState extends State<BusesDetailsPage> {
                   ),
                 ],
               ),
-            ),
+            ),*/
             SizedBox(
               height: 20,
             ),
             // getContentData(),
             SingleChildScrollView(
-              child: FutureBuilder<BikeModel?>(
-                future: getBikeLis(),
+              child: FutureBuilder<LogisticsModel?>(
+                future: getLogisticsLis(),
                 builder: (context, snapshot) {
                   //  if (snapshot.connectionState == ConnectionState.done && snapshot.hasData && snapshot.data != null) {
 
                   //            print("xindexlength=Inde=snapshot=====${snapshot}");
                   if (snapshot.hasData) {
-                    return  SingleChildScrollView(
+                    return SingleChildScrollView(
                       child: ListView.builder(
                         physics: ClampingScrollPhysics(),
                         scrollDirection: Axis.vertical,
-                        itemCount: snapshot.data!.type?.length,
+                        // itemCount: snapshot.data!.type?.length,
+                        itemCount: 2,
                         shrinkWrap: true,
-                        itemBuilder:  (BuildContext context, int index) {
+                        itemBuilder: (BuildContext context, int index) {
                           return Padding(
-                            padding: const EdgeInsets.only(left: 10, right: 10,top: 20),
+                            padding: const EdgeInsets.only(
+                                left: 10, right: 10, top: 20),
                             child: InkWell(
                               child: SingleChildScrollView(
                                 child: Container(
@@ -91,97 +91,121 @@ class _BusesDetailsPageState extends State<BusesDetailsPage> {
                                   child: Column(
                                     children: [
                                       Padding(
-                                          padding:  EdgeInsets.only(left: 10,right: 10,bottom: 12),
-                                          child:Stack(
-                                              children:[
-                                                ClipRRect(
-                                                  borderRadius: BorderRadius.circular(20),
-                                                  child: Image.asset('assets/images/STROM.jpg',
-                                                    height: MediaQuery.of(context).size.height * 0.2,
-                                                    width:MediaQuery.of(context).size.width ,
-                                                    fit: BoxFit.fill,),
-                                                ),
-                                                Positioned(
-                                                  top: 10,
-                                                  //left: 1,
-                                                  right: 20,
-                                                  //   right: 10,
-                                                  child: Icon(
-                                                    Icons.favorite_border,
-                                                    color: colors.whitebase,
-                                                    size: 20,
-                                                  ),
-                                                )
-                                              ]
-                                          )
-                                      ),
+                                          padding: EdgeInsets.only(
+                                              left: 10, right: 10, bottom: 12),
+                                          child: Stack(children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              child: Image.asset(
+                                                'assets/images/STROM.jpg',
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.2,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
+                                            Positioned(
+                                              top: 10,
+                                              //left: 1,
+                                              right: 20,
+                                              //   right: 10,
+                                              child: Icon(
+                                                Icons.favorite_border,
+                                                color: colors.whitebase,
+                                                size: 20,
+                                              ),
+                                            )
+                                          ])),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 10),
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  '${snapshot.data
-                                                      ?.type![index].productName}',
-                                                  style: TextStyle(color: Colors.black),
-                                                ),
-                                                SizedBox(
-                                                  height: 6,
-                                                ),
-                                                Text(
-                                                  '${snapshot.data
-                                                      ?.type![index].productPrice}',
-                                                  style: TextStyle(color: Colors.black,
-                                                      fontSize: 16,
-                                                      fontWeight: FontWeight.w600
-                                                  ),
-                                                ),
+                                                // Text(
+                                                //   '${snapshot.data
+                                                //       ?.type![index].productName}',
+                                                //   style: TextStyle(color: Colors.black),
+                                                // ),
+                                                // SizedBox(
+                                                //   height: 6,
+                                                // ),
+                                                // Text(
+                                                //   '${snapshot.data
+                                                //       ?.type![index].productPrice}',
+                                                //   style: TextStyle(color: Colors.black,
+                                                //       fontSize: 16,
+                                                //       fontWeight: FontWeight.w600
+                                                //   ),
+                                                // ),
                                                 Row(
                                                   children: [
-                                                    Icon(Icons.star,
+                                                    Icon(
+                                                      Icons.star,
                                                       color: Colors.orange,
                                                     ),
-                                                    Text(
-                                                      '${snapshot.data
-                                                          ?.type![index].FuelFreeRating}',
-                                                      style: TextStyle(color: Colors.black,
-                                                          fontSize: 12
-                                                      ),
-                                                    ),
+                                                    // Text(
+                                                    //   '${snapshot.data
+                                                    //       ?.type![index].fuelFreeRating}',
+                                                    //   style: TextStyle(color: Colors.black,
+                                                    //       fontSize: 12
+                                                    //   ),
+                                                    // ),
                                                     Text(
                                                       '(69 reviews)',
-                                                      style: TextStyle(color: Colors.grey,
-                                                          fontSize: 10
-
-                                                      ),
+                                                      style: TextStyle(
+                                                          color: Colors.grey,
+                                                          fontSize: 10),
                                                     ),
                                                     SizedBox(
                                                       width: 10,
                                                     ),
                                                     InkWell(
                                                       child: Container(
-                                                        height: MediaQuery.of(context).size.height * 0.05,
-                                                        width: MediaQuery.of(context).size.width * 0.45,
+                                                        height: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .height *
+                                                            0.05,
+                                                        width: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .width *
+                                                            0.45,
                                                         decoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(20),
-                                                            color: colors.secondary
-                                                        ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20),
+                                                            color: colors
+                                                                .secondary),
                                                         child: Center(
-                                                            child: Text("Book A Free Test Ride",
-                                                              style: TextStyle(
-                                                                  fontWeight: FontWeight.w600,
-                                                                  color: Colors.white
-                                                              ),
-                                                            )
-                                                        ),
+                                                            child: Text(
+                                                          "Book A Free Test Ride",
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              color:
+                                                                  Colors.white),
+                                                        )),
                                                       ),
                                                       onTap: () {
-                                                        Navigator.of(context).push(
+                                                        Navigator.of(context)
+                                                            .push(
                                                           MaterialPageRoute(
-                                                            builder: (context) => const BookRideTest(),
+                                                            builder: (context) =>
+                                                                const BookRideTest(),
                                                           ),
                                                         );
                                                       },
@@ -211,8 +235,9 @@ class _BusesDetailsPageState extends State<BusesDetailsPage> {
                     );
                   } else if (snapshot.hasError) {
                     return Center(
-                        child: Text('${snapshot.error}')//notFoundWidget(context),
-                    );
+                        child:
+                            Text('${snapshot.error}') //notFoundWidget(context),
+                        );
                     //Text('${snapshot.error}');
                   }
                   return Center(child: CircularProgressIndicator());
@@ -224,6 +249,4 @@ class _BusesDetailsPageState extends State<BusesDetailsPage> {
       ),
     );
   }
-
-
 }

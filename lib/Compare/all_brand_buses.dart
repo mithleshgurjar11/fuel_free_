@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/buses_details.page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
 
-class AllBrandsBuses extends StatefulWidget {
-  const AllBrandsBuses({Key? key}) : super(key: key);
+class BrandsBuses extends StatefulWidget {
+  const BrandsBuses({Key? key}) : super(key: key);
 
   @override
-  State<AllBrandsBuses> createState() => _AllBrandsBusesState();
+  State<BrandsBuses> createState() => _BrandsBusesState();
 }
 
-class _AllBrandsBusesState extends State<AllBrandsBuses> {
+class _BrandsBusesState extends State<BrandsBuses> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,7 +68,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -149,7 +150,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -190,7 +191,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -239,7 +240,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -280,7 +281,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -321,7 +322,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -362,7 +363,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -411,7 +412,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -452,7 +453,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -493,7 +494,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -534,7 +535,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -583,7 +584,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },
@@ -624,7 +625,7 @@ class _AllBrandsBusesState extends State<AllBrandsBuses> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const BusesDetailsPage(),
                         ),
                       );
                     },

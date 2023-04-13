@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fuel_free/Authentication/change_Password.dart';
 import 'package:fuel_free/Authentication/forget_password.dart';
 import 'package:fuel_free/Authentication/login_page.dart';
-import 'package:fuel_free/Authentication/registration_page.dart';
 import 'package:fuel_free/Authentication/verify_account.dart';
 import 'package:fuel_free/bottom_bar_double_bullet/bottom_bar.dart';
 import 'package:fuel_free/constants/routes.dart';
-import 'package:fuel_free/splash.dart';
+import 'package:fuel_free/Drawer/drawer.dart';
+import 'package:fuel_free/spalsh.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -23,10 +24,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomNavigation(),
+      home:  SplashScreen(),
       routes: {
-        login_route: ((context) => const LoginPage()),
-        registrationPage_route: (context) => const RegistrationPage(),
+        drawerPage_route: ((context) =>  DrawerPage()),
+        loginSignupScreen_route: (context) =>  LoginSignupScreen(),
         forgetPassword_route: ((context) => const ForgetPassword()),
         changePassword_route: ((context) => const ChangePassword()),
         otpPage_route: ((context) => const OtpPage()),
@@ -60,7 +61,6 @@ class MyApp extends StatelessWidget {
         // referAndEarnPoints_route: ((context) => const ReferAndEarnPoints()),
         // subscriptionPlans_route: ((context) => const SubscriptionPlans()),
         // helpAndSupport_route: ((context) => const HelpAndSupport()),
-
       },
     );
   }

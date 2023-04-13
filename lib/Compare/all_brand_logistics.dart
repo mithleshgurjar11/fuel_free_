@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_free/Helper/color.dart';
-import 'package:fuel_free/car_details_page.dart';
+import 'package:fuel_free/HomePage/car_details_page.dart';
+import 'package:fuel_free/HomePage/logistics_details.page.dart';
 
-class AllBrandsLogistics extends StatefulWidget {
-  const AllBrandsLogistics({Key? key}) : super(key: key);
+class BrandsLogistics extends StatefulWidget {
+  const BrandsLogistics({Key? key}) : super(key: key);
 
   @override
-  State<AllBrandsLogistics> createState() => _AllBrandsLogisticsState();
+  State<BrandsLogistics> createState() => _BrandsLogisticsState();
 }
 
-class _AllBrandsLogisticsState extends State<AllBrandsLogistics> {
+class _BrandsLogisticsState extends State<BrandsLogistics> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,7 +68,7 @@ class _AllBrandsLogisticsState extends State<AllBrandsLogistics> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LogisticsDetailsPage(),
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class _AllBrandsLogisticsState extends State<AllBrandsLogistics> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LogisticsDetailsPage(),
                         ),
                       );
                     },
@@ -149,7 +150,7 @@ class _AllBrandsLogisticsState extends State<AllBrandsLogistics> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const CarDetailsPage(),
+                          builder: (context) => const LogisticsDetailsPage(),
                         ),
                       );
                     },
